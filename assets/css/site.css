@@ -232,6 +232,14 @@ main { overflow-x: clip; }
 .quote p { font-family: var(--font-display); font-size: clamp(24px, 2.6vw, 38px); font-weight: 560; line-height: 1.16; letter-spacing: -0.02em; }
 .quote footer { color: var(--color-muted); font-size: 15px; font-weight: 600; }
 
+/* Logokarusell: kundelogoer på like store hvite flater. Uten JavaScript eller med «reduser bevegelse» står logoene i rader. */
+.logo-marquee { margin-top: clamp(8px, 2vw, 24px); }
+.logo-marquee__track { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; padding-inline: var(--gutter, 20px); }
+.logo-marquee__track[aria-hidden="true"] { display: none; }
+.logo-tile { --tile-w: clamp(160px, 17vw, 220px); display: flex; align-items: center; justify-content: center; flex: none; width: var(--tile-w); height: calc(var(--tile-w) * .5625); padding: 0 clamp(18px, 2vw, 28px); border-radius: var(--radius-3); background: var(--color-logo-bg); }
+.logo-tile img { width: 100%; height: 44%; min-width: 0; object-fit: contain; }
+.logo-tile__name { color: var(--color-ink); font-family: var(--font-display); font-size: clamp(16px, 1.4vw, 19px); font-weight: 650; line-height: 1.15; letter-spacing: -0.01em; text-align: center; hyphens: manual; }
+
 /* Kontaktpersoner – brukes på forsiden og kontaktsiden */
 .contact-people { display: grid; gap: 16px; }
 @media (min-width: 900px) { .contact-people { grid-template-columns: 1fr 1fr; } }
@@ -479,6 +487,11 @@ html:not(.js) .level-filter { display: none; }
 /* 10. Bevegelse – alt under gjelder bare når animasjoner er tillatt */
 @layer scenes {
 @media (prefers-reduced-motion: no-preference) {
+  .logo-marquee.is-running { display: flex; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .logo-marquee.is-running .logo-marquee__track { display: flex; flex: none; flex-wrap: nowrap; padding: 0 16px 0 0; animation: marquee var(--marquee-time, 40s) linear infinite; }
+  @media (hover: hover) { .logo-marquee.is-running:hover .logo-marquee__track { animation-play-state: paused; } }
+  @keyframes marquee { to { transform: translateX(-100%); } }
+
   .hero__orbit { animation: orbit 16s linear infinite; }
   .hero.is-offscreen .hero__orbit { animation-play-state: paused; }
   @keyframes orbit { to { transform: rotate(360deg); } }

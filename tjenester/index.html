@@ -155,13 +155,27 @@
   </div>
 </section>
 
-<!-- BLOKK: Sitat -->
-<section class="section section--surface" aria-label="Sitat fra kunde">
+<!-- BLOKK: Logokarusell med kunder. Hver kunde er et <li class="logo-tile">. Logo: legg filen i assets/img/logoer/ og bruk <img>. Uten logo: navnet i <span class="logo-tile__name">.
+     MANGLER LOGO: OsloMet, Fiskeridirektoratet, Wattif EV, DNB, Eviny, Vis. Helse Vest viser foreløpig logoen til Helse Vest IKT. -->
+<section class="section section--surface" aria-labelledby="kunder-title">
   <div class="wrap">
-    <blockquote class="quote">
-      <p>«Figment kombinerte teknisk innsikt og prosjektfaglig ekspertise, og ledet prosjektet med stødig hånd.»</p>
-      <footer>Geir Nesse, IT-sjef i Sammen</footer>
-    </blockquote>
+    <div class="section-head">
+      <h2 class="t-h2" id="kunder-title" data-motion="rise">Noen av kundene <span class="nowrap">våre<span class="dot" aria-hidden="true"></span></span></h2>
+    </div>
+  </div>
+  <div class="logo-marquee" data-marquee>
+    <ul class="logo-marquee__track" aria-label="Kunder">
+      <li class="logo-tile"><img src="../assets/img/logoer/ks-digital.png" alt="KS Digital" loading="lazy"></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/helse-vest-ikt.png" alt="Helse Vest" loading="lazy"></li>
+      <li class="logo-tile"><span class="logo-tile__name">OsloMet</span></li>
+      <li class="logo-tile"><span class="logo-tile__name">Fiskeri&shy;direktoratet</span></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/felleskjopet.png" alt="Felleskjøpet" loading="lazy"></li>
+      <li class="logo-tile"><span class="logo-tile__name">Wattif EV</span></li>
+      <li class="logo-tile"><span class="logo-tile__name">DNB</span></li>
+      <li class="logo-tile"><span class="logo-tile__name">Eviny</span></li>
+      <li class="logo-tile"><span class="logo-tile__name">Vis</span></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/sammen.png" alt="Sammen" loading="lazy"></li>
+    </ul>
   </div>
 </section>
 

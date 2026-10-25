@@ -176,6 +176,19 @@
     } else { visible = true; update(); }
   }
 
+  /* Logokarusell: lager en kopi av lista så båndet går rundt uten opphold */
+  document.querySelectorAll('[data-marquee]').forEach(marquee => {
+    const track = marquee.querySelector('.logo-marquee__track');
+    if (!track) return;
+    const copy = track.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.removeAttribute('aria-label');
+    copy.querySelectorAll('img').forEach(image => image.setAttribute('alt', ''));
+    marquee.append(copy);
+    marquee.style.setProperty('--marquee-time', `${track.children.length * 4}s`);
+    marquee.classList.add('is-running');
+  });
+
   /* 4. Bevegelse */
   if (!window.gsap || !window.ScrollTrigger) return;
   const { gsap, ScrollTrigger } = window;
