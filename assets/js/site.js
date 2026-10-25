@@ -157,16 +157,35 @@
     return () => { element.innerHTML = original; };
   };
 
+  /* Spiller av en animasjon første gang elementet blir synlig. IntersectionObserver
+     virker også når siden ligger i en ramme som scrolles av en annen side. */
+  const whenVisible = (element, play) => {
+    if (!('IntersectionObserver' in window)) { play(); return; }
+    const io = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      io.disconnect();
+      play();
+    }, { rootMargin: '0px 0px -8% 0px' });
+    io.observe(element);
+  };
+
   const start = () => gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
     const cleanups = [];
 
+    /* Alle scroll-effekter krever at vinduet selv scroller. Er vinduet svært høyt
+       (f.eks. en forhåndsvisning som viser hele siden på én gang), vises siden uten dem,
+       så ingenting blir stående skjult eller låst. */
+    if (innerHeight > 1600) return;
+
     /* Myk scrolling */
-    const lenis = window.lenis = new Lenis({ lerp: 0.1, anchors: { offset: -(header ? header.offsetHeight : 0) } });
-    const tick = time => lenis.raf(time * 1000);
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add(tick);
-    gsap.ticker.lagSmoothing(0);
-    cleanups.push(() => { gsap.ticker.remove(tick); gsap.ticker.lagSmoothing(500, 33); lenis.destroy(); window.lenis = null; });
+    {
+      const lenis = window.lenis = new Lenis({ lerp: 0.1, anchors: { offset: -(header ? header.offsetHeight : 0) } });
+      const tick = time => lenis.raf(time * 1000);
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(tick);
+      gsap.ticker.lagSmoothing(0);
+      cleanups.push(() => { gsap.ticker.remove(tick); gsap.ticker.lagSmoothing(500, 33); lenis.destroy(); window.lenis = null; });
+    }
 
     /* data-motion="rise": overskriften glir opp og prikken faller på plass */
     document.querySelectorAll('[data-motion~="rise"]').forEach(element => {
@@ -174,13 +193,14 @@
       const timeline = gsap.timeline({ paused: true });
       timeline.fromTo(element, { yPercent: 30, clipPath: 'inset(0% -6% 100% -6%)' }, { yPercent: 0, clipPath: 'inset(-30% -6% -30% -6%)', duration: .95, ease: 'expo.out', clearProps: 'clipPath,transform' }, 0);
       if (dot) timeline.fromTo(dot, { scale: 0, yPercent: -260 }, { scale: 1, yPercent: 0, duration: .75, ease: 'back.out(2.2)', clearProps: 'transform' }, .42);
-      ScrollTrigger.create({ trigger: element, start: 'top 90%', once: true, animation: timeline });
+      whenVisible(element, () => timeline.play());
     });
 
-    /* data-motion="ink": teksten mørkner ord for ord mens du scroller */
+    /* data-motion="ink": teksten trer fram ord for ord */
     document.querySelectorAll('[data-motion~="ink"]').forEach(element => {
       cleanups.push(splitWords(element));
-      gsap.fromTo(element.querySelectorAll('.ink__word'), { opacity: .18 }, { opacity: 1, stagger: .06, ease: 'none', scrollTrigger: { trigger: element, start: 'top 88%', end: 'bottom 62%', scrub: .4 } });
+      const tween = gsap.fromTo(element.querySelectorAll('.ink__word'), { opacity: .18 }, { opacity: 1, duration: .5, stagger: .035, ease: 'none', paused: true });
+      whenVisible(element, () => tween.play());
     });
 
     /* data-motion="iris": bildet åpner seg fra en sirkel */
@@ -189,13 +209,15 @@
       const timeline = gsap.timeline({ paused: true });
       timeline.fromTo(element, { clipPath: 'circle(0% at 50% 50%)' }, { clipPath: 'circle(75% at 50% 50%)', duration: 1.15, ease: 'expo.inOut', clearProps: 'clipPath' }, 0);
       if (image) timeline.fromTo(image, { scale: 1.2 }, { scale: 1, duration: 1.5, ease: 'expo.out', clearProps: 'transform' }, .15);
-      ScrollTrigger.create({ trigger: element, start: 'top 86%', once: true, animation: timeline });
+      whenVisible(element, () => timeline.play());
     });
 
     /* data-motion="up": grupper av elementer glir inn etter hverandre */
     document.querySelectorAll('[data-motion~="up"]').forEach(group => {
-      gsap.from(group.children, { y: 40, opacity: 0, duration: .9, stagger: .08, ease: 'expo.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: group, start: 'top 88%', once: true } });
+      const tween = gsap.from(group.children, { y: 40, opacity: 0, duration: .9, stagger: .08, ease: 'expo.out', clearProps: 'transform,opacity', paused: true });
+      whenVisible(group, () => tween.play());
     });
+
 
     /* Forsiden: intro-linjene glir inn */
     const intro = document.querySelector('.intro');
