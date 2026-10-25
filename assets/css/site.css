@@ -372,23 +372,37 @@ main { overflow-x: clip; }
 /* 8. Undersider */
 @layer sections {
 /* Tjenesteområder med tre nivåer hver */
-.areas { display: grid; gap: 48px; }
-@media (min-width: 700px) { .areas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 24px; } }
-@media (min-width: 1200px) { .areas { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; } }
-.area__head { display: grid; gap: 4px; margin-bottom: 20px; }
+/* Tjenesteområder. Under 1200 px: ett kort per område, som tjenestekortene på forsiden. Fra 1200 px: fire kolonner der alle boksene er like store. */
+.level-filter { margin-bottom: 28px; }
+html:not(.js) .level-filter { display: none; }
+.areas { display: grid; grid-auto-rows: 1fr; gap: 20px; }
+.area { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 20px; padding: clamp(18px, 2.4vw, 34px); border-radius: var(--radius-1); background: var(--color-surface); box-shadow: 0 -18px 50px color-mix(in srgb, var(--color-ink) 35%, transparent); }
+.area__head { display: grid; gap: 4px; align-content: start; }
 .area__head p { color: var(--color-muted); }
-.area__cards { display: grid; gap: 12px; }
-.level { display: grid; gap: 8px; padding: 22px; border-radius: var(--radius-3); }
-.level p { font-size: 15px; line-height: 1.5; }
-.level--1 { background: var(--color-ink); color: var(--color-text); }
-.level--1 .t-eyebrow, .level--1 p { color: var(--color-muted-dark); }
-.level--2 { background: var(--color-surface); }
-.level--2 p { color: var(--color-muted); }
-.level--3 { box-shadow: inset 0 0 0 1px var(--line); }
-.level--3 p { color: var(--color-muted); }
-.levels-key { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 28px; color: var(--color-muted); font-size: 14px; }
-.levels-key span { display: inline-flex; align-items: center; gap: 8px; }
-.levels-key i { width: 14px; height: 14px; border-radius: 4px; }
+.area__head .t-small { color: var(--color-text); }
+.area__cards { display: grid; grid-template-rows: repeat(3, 1fr); }
+.level { display: grid; gap: 6px; align-content: start; padding: 16px 0; border-top: 1px solid var(--line); transition: opacity .35s var(--ease); }
+.level:last-child { border-bottom: 1px solid var(--line); }
+.level p { font-size: 15px; line-height: 1.5; color: var(--color-muted); }
+.level .t-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--color-text); }
+.level .t-eyebrow::before { content: ""; width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.level--1 .t-eyebrow::before { background: var(--color-accent); }
+.level--2 .t-eyebrow::before { background: var(--color-text); }
+.level--3 .t-eyebrow::before { box-shadow: inset 0 0 0 1.5px var(--color-text); }
+@media (min-width: 1200px) {
+  .areas { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: auto repeat(3, 1fr); grid-auto-rows: auto; gap: 12px 16px; }
+  .area { grid-row: span 4; grid-template-rows: subgrid; gap: 12px; padding: 0; border-radius: 0; background: none; box-shadow: none; }
+  .area__head { margin-bottom: 8px; }
+  .area__cards { display: contents; }
+  .level { gap: 8px; padding: 22px; border: 0; border-radius: var(--radius-3); }
+  .level:last-child { border: 0; }
+  .level--1 { background: color-mix(in srgb, var(--color-accent) 38%, var(--color-paper)); }
+  .level--2 { background: var(--color-surface); }
+  .level--3 { box-shadow: inset 0 0 0 1px var(--line); }
+}
+.areas[data-focus="1"] .level:not(.level--1),
+.areas[data-focus="2"] .level:not(.level--2),
+.areas[data-focus="3"] .level:not(.level--3) { opacity: .25; }
 
 /* Prosjektliste med filter */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }

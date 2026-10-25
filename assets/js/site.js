@@ -7,7 +7,7 @@
 
     1. Header og mobilmeny
     2. Hero: bokstavanimasjon
-    3. Prosjektfilter
+    3. Prosjektfilter og nivåvelger på tjenestesiden
     4. Bevegelse med GSAP og Lenis (slås av ved «reduser bevegelse»)
 */
 (() => {
@@ -129,6 +129,19 @@
     });
     const fromUrl = new URLSearchParams(location.search).get('bransje');
     if (fromUrl && filterBar.querySelector(`[data-filter="${fromUrl}"]`)) apply(fromUrl);
+  }
+
+  /* Nivåvelger på tjenestesiden: fremhever ett nivå og toner ned de andre */
+  const levelBar = document.querySelector('[data-level-filter]');
+  const areas = document.querySelector('.areas');
+  if (levelBar && areas) {
+    levelBar.addEventListener('click', event => {
+      const button = event.target.closest('[data-level]');
+      if (!button) return;
+      const level = button.dataset.level;
+      if (level) areas.dataset.focus = level; else delete areas.dataset.focus;
+      levelBar.querySelectorAll('[data-level]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+    });
   }
 
   /* 4. Bevegelse */
