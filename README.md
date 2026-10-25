@@ -47,6 +47,8 @@ node tools/sync.mjs
 
 Skriptet oppdaterer alle sider. Det krever Node.js, men sidene fungerer som de er også uten.
 
+**Kundelogoer.** Prosjektene viser kundens logo på en hvit flate. Logoene ligger i `assets/img/logoer/` og heter det samme som prosjektmappen, for eksempel `sammen.png`. Bruk PNG eller SVG med gjennomsiktig bakgrunn.
+
 **Legge til et prosjekt.** Kopier en prosjektmappe, for eksempel `prosjekter/sammen/`, gi den nytt navn og bytt tekst og bilde. Legg så til et kort i `prosjekter/index.html` (og eventuelt på forsiden). `data-tags` på kortet styrer bransjefilteret og må matche en knapp øverst i lista. Ny bransje: legg til en knapp.
 
 **Legge til en ansatt.** Kopier en `<article class="member">`-blokk i `jobbe-i-figment/index.html`. Sitat legges inn der det står `SITAT` i en kommentar.
