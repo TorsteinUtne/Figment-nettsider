@@ -64,7 +64,19 @@
     <p class="t-eyebrow hero__eyebrow">Figment · Oslo og Bergen</p>
     <h1 class="t-display hero__title" id="hero-title" data-split-chars><span class="hero__line">Strategisk</span><span class="hero__line">teknologiledelse<span class="dot" aria-hidden="true"></span></span></h1>
     <div class="hero__foot">
-      <p class="t-lead hero__claim">Vi tar teknologi helt i mål, fra ambisjon til løsninger som virker.</p>
+      <!-- Roterende tekst: «Vi» står fast, setningene under byttes hvert 5. sekund.
+           Legg til, fjern eller endre <span class="rotator__item"> fritt. Husk å oppdatere aria-label. -->
+      <p class="t-h3 hero__claim" aria-label="Vi kan teknologiledelse, leder kritiske prosjekter, gjennomfører endring, forbedrer prosesser, bygger IT-arkitektur og sikrer effekt og verdi av satsningene.">
+        <span class="hero__claim-fixed" aria-hidden="true">Vi</span>
+        <span class="rotator" data-rotator data-interval="5000" aria-hidden="true">
+        <span class="rotator__item is-active">kan teknologiledelse</span>
+        <span class="rotator__item">leder kritiske prosjekter</span>
+        <span class="rotator__item">gjennomfører endring</span>
+        <span class="rotator__item">forbedrer prosesser</span>
+        <span class="rotator__item">bygger IT-arkitektur</span>
+        <span class="rotator__item">sikrer effekt og verdi av satsningene</span>
+        </span>
+      </p>
       <a class="btn btn--light" href="strategisk-teknologiledelse/">Se hva vi gjør</a>
     </div>
   </div>

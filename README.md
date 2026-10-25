@@ -51,6 +51,8 @@ Skriptet oppdaterer alle sider. Det krever Node.js, men sidene fungerer som de e
 
 **Legge til en ansatt.** Kopier en `<article class="member">`-blokk i `jobbe-i-figment/index.html`. Sitat legges inn der det står `SITAT` i en kommentar.
 
+**Endre den roterende teksten i hero.** I `index.html`, under hero-blokken, står hver setning som en `<span class="rotator__item">`. «Vi» står fast foran. Legg til, fjern eller endre setninger, og oppdater `aria-label` på avsnittet så skjermlesere får hele teksten. Tiden mellom byttene settes med `data-interval` (millisekunder, nå 5000).
+
 **Legge inn video i hero.** Legg videofilen i `assets/video/hero.mp4` og fjern kommentartegnene rundt `<video>` øverst på forsiden.
 
 ## Se siden lokalt

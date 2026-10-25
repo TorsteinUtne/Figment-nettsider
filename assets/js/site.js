@@ -80,6 +80,27 @@
     frame?.style.setProperty('--dot-delay', `${end + 250}ms`);
     frame?.style.setProperty('--foot-delay', `${end + 350}ms`);
   }
+  /* Hero: roterende tekst etter det faste «Vi». Står stille ved «reduser bevegelse». */
+  document.querySelectorAll('[data-rotator]').forEach(rotator => {
+    const items = [...rotator.querySelectorAll('.rotator__item')];
+    if (items.length < 2 || reduce.matches) return;
+    const interval = Number(rotator.dataset.interval) || 5000;
+    let index = 0, timer = null;
+    const next = () => {
+      const current = items[index];
+      index = (index + 1) % items.length;
+      current.classList.remove('is-active');
+      current.classList.add('is-leaving');
+      items[index].classList.remove('is-leaving');
+      items[index].classList.add('is-active');
+      setTimeout(() => current.classList.remove('is-leaving'), 900);
+    };
+    const start = () => { if (!timer) timer = setInterval(next, interval); };
+    const stop = () => { clearInterval(timer); timer = null; };
+    start();
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+  });
+
   const hero = document.querySelector('.hero');
   if (hero && 'IntersectionObserver' in window) {
     new IntersectionObserver(([entry]) => hero.classList.toggle('is-offscreen', !entry.isIntersecting)).observe(hero);
