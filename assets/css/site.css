@@ -466,3 +466,7 @@ main { overflow-x: clip; }
   @media (min-width: 700px) { .work.is-track .case { aspect-ratio: 16 / 10.5; } }
 }
 }
+
+/* Grunnfarger utenfor lagene, så de også vinner over stiler en vert legger til (f.eks. forhåndsvisning). */
+html { background: var(--color-paper); color-scheme: dark; }
+body { margin: 0; background: var(--color-paper); color: var(--color-text); font-family: var(--font-body); font-size: 17px; line-height: 1.6; }
