@@ -9,7 +9,7 @@ Bygget på designmalen [Onda fra 8B](https://8b.com/templates/onda/) (MIT-lisens
 | Side | Mappe | Innhold |
 |---|---|---|
 | Forside | `index.html` | Hero, hvem vi er, tjenester, tidslinje, utvalgte prosjekter, Sonatgruppen, karriere, kontaktpersoner |
-| Våre tjenester | `tjenester/` | Fire tjenesteområder med tre nivåer hver, fagområder, logokarusell med kunder |
+| Våre tjenester | `tjenester/` | Fire tjenesteområder med tre nivåer hver, logokarusell med kunder |
 | Prosjekter | `prosjekter/` | Liste med filter på bransje, og én undermappe per prosjekt |
 | Å jobbe i Figment | `jobbe-i-figment/` | Verdier, ansattgoder, sosialt, alle ansatte |
 | Karriere | `karriere/` | Hvem vi ser etter og ledige stillinger |
