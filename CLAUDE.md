@@ -34,5 +34,5 @@ Gjenbruk disse klassene før du lager nye:
 - Firma: Figment AS (registrert som Sonat Figment AS), org.nr. 930 185 817
 - Oslo: Karl Johans gate 13, 0154 Oslo. Leder Lise Aasland Ursin, lise@figment.no, 466 64 240
 - Bergen: C. Sundts gate 17 (Grieggården), 5004 Bergen. Leder Torstein Utne, torstein@figment.no, 966 26 365
-- Felles e-post: hei@figment.no. Søknader: molte.ai-lenken på karrieresiden
+- Felles e-post: hei@figment.no. Søknader sendes også dit (mailto-lenker på karrieresiden)
 - Sonatgruppen: Figment, Sonat (sonat.no), These Ways (theseways.com)

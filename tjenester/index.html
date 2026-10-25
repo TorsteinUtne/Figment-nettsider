@@ -59,7 +59,7 @@
   <div class="wrap">
     <p class="t-eyebrow page-hero__eyebrow">Våre tjenester</p>
     <h1 class="t-h1" id="page-title" data-motion="rise">Vi gjør mål&shy;setninger til <span class="nowrap">resultater<span class="dot" aria-hidden="true"></span></span></h1>
-    <p class="t-lead page-hero__lead">Vi bygger broen mellom forretningsmål og teknologi. Det gjelder å velge riktig, prioritere hardt og lede prosjektene fra start til slutt.</p>
+    <p class="t-lead page-hero__lead">Vi setter mennesket i sentrum, kombinerer tung teknisk kompetanse med sterk forretnings- og organisasjonsforståelse. Vi hjelper kundene våre med å skape reell verdi, og vi loser dem trygt gjennom de vanskelige digitaliseringsprosjektene.</p>
     <div class="page-hero__actions">
       <a class="btn" href="../kontakt/">Ta kontakt</a>
       <a class="link" href="../prosjekter/"><span>Se prosjektene våre</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
@@ -70,7 +70,7 @@
 <!-- BLOKK: Bilde i full bredde -->
 <section aria-label="Bilde">
   <div class="wrap">
-    <figure class="media ratio-16x9" data-motion="iris"><img src="../assets/img/tjenester-topp.jpg" width="1600" height="900" alt="Figment-rådgivere i arbeid"></figure>
+    <figure class="media ratio-16x9" data-motion="iris"><img src="../assets/img/tjenester-topp.svg" width="1600" height="900" alt="Skisse av de fire tjenesteområdene ledelse, innsikt, transformasjon og realisering, med piler i en sirkel mellom dem"></figure>
   </div>
 </section>
 
@@ -79,7 +79,7 @@
   <div class="wrap text-block">
     <div class="text-block__head">
       <p class="t-eyebrow">Hva vi gjør</p>
-      <h2 class="t-h2" id="hva-title" data-motion="rise">Fra strategi til <span class="nowrap">løsning<span class="dot" aria-hidden="true"></span></span></h2>
+      <h2 class="t-h2" id="hva-title" data-motion="rise">Fra strategi til <span class="nowrap">realisering<span class="dot" aria-hidden="true"></span></span></h2>
     </div>
     <div class="prose t-lead">
       <p>Vi setter mennesket i sentrum og kombinerer tung teknisk kompetanse med sterk forretnings- og organisasjonsforståelse.</p>
@@ -88,12 +88,18 @@
   </div>
 </section>
 
-<!-- BLOKK: Fire tjenesteområder med tre nivåer hver -->
+<!-- BLOKK: Fire tjenesteområder med tre nivåer hver. På brede skjermer går fremhevingen automatisk gjennom nivåene hvert 5. sekund når «Alle» er valgt. På smalere skjermer stables kortene når man scroller. -->
 <section class="section section--tight" aria-labelledby="omrader-title">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="t-h2" id="omrader-title" data-motion="rise">Fire <span class="nowrap">tjenesteområder<span class="dot" aria-hidden="true"></span></span></h2>
-      <p class="t-lead section-head__lead">Hvert område dekker hele veien, fra strategiske valg til gjennomføring og støtte.</p>
+      <h2 class="t-h2" id="omrader-title" data-motion="rise">Våre <span class="nowrap">tjenester<span class="dot" aria-hidden="true"></span></span></h2>
+      <p class="t-lead section-head__lead">Vi er med hele veien fra strategi til realisering.</p>
+    </div>
+    <div class="filters level-filter" role="group" aria-label="Fremhev nivå" data-level-filter>
+      <button class="filter" type="button" data-level="" aria-pressed="true">Alle</button>
+      <button class="filter" type="button" data-level="1" aria-pressed="false">Strategi</button>
+      <button class="filter" type="button" data-level="2" aria-pressed="false">Gjennomføring</button>
+      <button class="filter" type="button" data-level="3" aria-pressed="false">Støtte</button>
     </div>
     <div class="areas" data-motion="up">
       <div class="area" id="ledelse">
@@ -120,8 +126,8 @@
           <div class="level level--3"><p class="t-eyebrow">Støtte</p><h4 class="t-h4">Innføringsledelse</h4><p>Vi sørger for at nye løsninger blir tatt i bruk i linjen, med opplæring og oppfølging.</p></div>
         </div>
       </div>
-      <div class="area" id="gjennomforing">
-        <div class="area__head"><p class="t-small">04</p><h3 class="t-h3">Gjennomføring</h3><p>Med fokus på tid, kost og kvalitet.</p></div>
+      <div class="area" id="realisering">
+        <div class="area__head"><p class="t-small">04</p><h3 class="t-h3">Realisering</h3><p>Med fokus på tid, kost og kvalitet.</p></div>
         <div class="area__cards">
           <div class="level level--1"><p class="t-eyebrow">Strategi</p><h4 class="t-h4">Portefølje og produkt</h4><p>Vi setter opp styring av porteføljen og leder produktene over tid.</p></div>
           <div class="level level--2"><p class="t-eyebrow">Gjennomføring</p><h4 class="t-h4">Prosjektledelse</h4><p>Vi leder prosjekter og programmer i mål.</p></div>
@@ -129,38 +135,31 @@
         </div>
       </div>
     </div>
-    <div class="levels-key" aria-label="Forklaring">
-      <span><i style="background:var(--color-ink)"></i>Strategi</span>
-      <span><i style="background:var(--color-surface)"></i>Gjennomføring</span>
-      <span><i style="box-shadow:inset 0 0 0 1px var(--line)"></i>Støtte</span>
-    </div>
   </div>
 </section>
 
-<!-- BLOKK: Tekst + bilde -->
-<section class="section" aria-labelledby="fag-title">
-  <div class="wrap split">
-    <div class="split__text">
-      <p class="t-eyebrow">Fagområder</p>
-      <h2 class="t-h2" id="fag-title" data-motion="rise">Det vi er kjent <span class="nowrap">for<span class="dot" aria-hidden="true"></span></span></h2>
-      <div class="grid-cards" style="margin-top:16px">
-        <div class="line-card"><h3 class="t-h4">IT-strategi og arkitektur</h3><p>Vi hjelper dere fra ambisjon til implementasjon, med riktige prinsipper, riktig prioritering og full kontroll på budsjettet.</p></div>
-        <div class="line-card"><h3 class="t-h4">Teknologiledelse</h3><p>Vi bringer arkitektur, forretningsmål og prosjekter sammen. Dere får teknologiledere som forstår begge sider av bordet.</p></div>
-        <div class="line-card"><h3 class="t-h4">KI og automatisering</h3><p>Vi kartlegger hvordan virksomheten kan dra nytte av KI, implementerer løsningene og hjelper dere gjennom endringen.</p></div>
-        <div class="line-card"><h3 class="t-h4">Prosjektledelse</h3><p>Vi fjerner unødvendig arbeid og leverer på tid, uten å miste fokus på verdi.</p></div>
-      </div>
-    </div>
-    <figure class="split__media media ratio-4x5" data-motion="iris"><img src="../assets/img/tjeneste-gjennomforing.jpg" width="1200" height="900" alt="" loading="lazy"></figure>
-  </div>
-</section>
-
-<!-- BLOKK: Sitat -->
-<section class="section section--surface" aria-label="Sitat fra kunde">
+<!-- BLOKK: Logokarusell med kunder. Hver kunde er et <li class="logo-tile">. Logo: legg filen i assets/img/logoer/ og bruk <img>. Uten logo: navnet i <span class="logo-tile__name">.
+     MANGLER LOGO: Vis. -->
+<section class="section section--surface" aria-labelledby="kunder-title">
   <div class="wrap">
-    <blockquote class="quote">
-      <p>«Figment kombinerte teknisk innsikt og prosjektfaglig ekspertise, og ledet prosjektet med stødig hånd.»</p>
-      <footer>Geir Nesse, IT-sjef i Sammen</footer>
-    </blockquote>
+    <div class="section-head">
+      <h2 class="t-h2" id="kunder-title" data-motion="rise">Noen av kundene <span class="nowrap">våre<span class="dot" aria-hidden="true"></span></span></h2>
+    </div>
+  </div>
+  <div class="logo-marquee" data-marquee>
+    <ul class="logo-marquee__track" aria-label="Kunder">
+      <li class="logo-tile"><img src="../assets/img/logoer/ks-digital.png" alt="KS Digital" loading="lazy"></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/helse-vest-ikt.png" alt="Helse Vest" loading="lazy"></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/oslomet.png" alt="OsloMet" loading="lazy"></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/fiskeridirektoratet.png" alt="Fiskeridirektoratet" loading="lazy"></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/felleskjopet.png" alt="Felleskjøpet" loading="lazy"></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/wattif-ev.png" alt="Wattif EV" loading="lazy"></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/dnb.png" alt="DNB" loading="lazy"></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/eviny.png" alt="Eviny" loading="lazy"></li>
+      <li class="logo-tile"><span class="logo-tile__name">Vis</span></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/tryg.png" alt="Tryg" loading="lazy"></li>
+      <li class="logo-tile"><img src="../assets/img/logoer/sammen.png" alt="Sammen" loading="lazy"></li>
+    </ul>
   </div>
 </section>
 
@@ -183,7 +182,7 @@
     <div class="site-footer__col">
       <p class="t-small site-footer__label">Figment AS</p>
       <p>Org.nr. 930 185 817</p>
-      <address>Oslo: Karl Johans gate 13<br>Bergen: C. Sundts gate 17</address>
+      <address>Karl Johans gate 13, 0154 Oslo<br>C. Sundts gate 17, 5004 Bergen</address>
       <a class="link-2" href="mailto:hei@figment.no">hei@figment.no</a>
     </div>
     <nav class="site-footer__col" aria-label="Bunnmeny">
@@ -196,8 +195,8 @@
     </nav>
     <div class="site-footer__col">
       <p class="t-small site-footer__label">Snakk med oss</p>
-      <a class="link-2" href="mailto:lise@figment.no">Lise, Oslo</a>
-      <a class="link-2" href="mailto:torstein@figment.no">Torstein, Bergen</a>
+      <a class="link-2" href="../kontakt/">Lise, Oslo</a>
+      <a class="link-2" href="../kontakt/">Torstein, Bergen</a>
     </div>
     <div class="site-footer__col">
       <p class="t-small site-footer__label">Sonatgruppen</p>

@@ -7,7 +7,7 @@
 
     1. Header og mobilmeny
     2. Hero: bokstavanimasjon
-    3. Prosjektfilter
+    3. Prosjektfilter og nivåvelger på tjenestesiden
     4. Bevegelse med GSAP og Lenis (slås av ved «reduser bevegelse»)
 */
 (() => {
@@ -131,6 +131,64 @@
     if (fromUrl && filterBar.querySelector(`[data-filter="${fromUrl}"]`)) apply(fromUrl);
   }
 
+  /* Nivåvelger på tjenestesiden: fremhever ett nivå og toner ned de andre.
+     Når «Alle» er valgt og områdene står side om side, går fremhevingen selv
+     gjennom nivåene hvert 5. sekund. Står stille ved «reduser bevegelse», når
+     musepekeren er over boksene og når seksjonen ikke er synlig. */
+  const levelBar = document.querySelector('[data-level-filter]');
+  const areas = document.querySelector('.areas');
+  if (levelBar && areas) {
+    const buttons = [...levelBar.querySelectorAll('[data-level]')];
+    const wide = matchMedia('(min-width: 1200px)');
+    let chosen = '', auto = 0, timer = null, visible = false, hovering = false;
+    const show = level => {
+      if (level) areas.dataset.focus = level; else delete areas.dataset.focus;
+      buttons.forEach(button => button.classList.toggle('is-auto', !chosen && button.dataset.level === String(level || '')));
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    const update = () => {
+      const run = !chosen && wide.matches && !reduce.matches && visible && !document.hidden;
+      if (!run) {
+        stop();
+        if (!chosen && !(hovering && auto)) { auto = 0; show(''); }
+        return;
+      }
+      if (hovering) { stop(); return; }
+      if (timer) return;
+      if (!auto) { auto = 1; show(auto); }
+      timer = setInterval(() => { auto = auto % 3 + 1; show(auto); }, 5000);
+    };
+    levelBar.addEventListener('click', event => {
+      const button = event.target.closest('[data-level]');
+      if (!button) return;
+      chosen = button.dataset.level;
+      buttons.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+      stop(); auto = 0; show(chosen);
+      update();
+    });
+    areas.addEventListener('pointerenter', () => { hovering = true; update(); });
+    areas.addEventListener('pointerleave', () => { hovering = false; update(); });
+    wide.addEventListener('change', update);
+    reduce.addEventListener('change', update);
+    document.addEventListener('visibilitychange', update);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; update(); }, { threshold: .25 }).observe(areas);
+    } else { visible = true; update(); }
+  }
+
+  /* Logokarusell: lager en kopi av lista så båndet går rundt uten opphold */
+  document.querySelectorAll('[data-marquee]').forEach(marquee => {
+    const track = marquee.querySelector('.logo-marquee__track');
+    if (!track) return;
+    const copy = track.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.removeAttribute('aria-label');
+    copy.querySelectorAll('img').forEach(image => image.setAttribute('alt', ''));
+    marquee.append(copy);
+    marquee.style.setProperty('--marquee-time', `${track.children.length * 4}s`);
+    marquee.classList.add('is-running');
+  });
+
   /* 4. Bevegelse */
   if (!window.gsap || !window.ScrollTrigger) return;
   const { gsap, ScrollTrigger } = window;
@@ -241,6 +299,25 @@
           .to(card.querySelector('.service__shade'), { opacity: .5 }, 0);
       });
       cleanups.push(() => { services.classList.remove('is-deck'); cards.forEach(card => card.style.removeProperty('--i')); });
+    }
+
+    /* Tjenestesiden: på smalere skjermer stables områdekortene som på forsiden */
+    const areaDeck = document.querySelector('.areas');
+    if (areaDeck) {
+      const deckMedia = gsap.matchMedia();
+      deckMedia.add('(max-width: 1199px)', () => {
+        const cards = [...areaDeck.querySelectorAll('.area')];
+        areaDeck.classList.add('is-deck');
+        cards.forEach((card, index) => card.style.setProperty('--i', index));
+        cards.forEach((card, index) => {
+          const next = cards[index + 1];
+          if (!next) return;
+          gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: next, start: 'top bottom', end: () => `top ${parseFloat(getComputedStyle(next).top) || 0}px`, scrub: true, invalidateOnRefresh: true } })
+            .fromTo(card, { scale: 1, '--shade': 0 }, { scale: .92, '--shade': .5 }, 0);
+        });
+        return () => { areaDeck.classList.remove('is-deck'); cards.forEach(card => { card.style.removeProperty('--i'); card.style.removeProperty('--shade'); gsap.set(card, { clearProps: 'transform' }); }); };
+      });
+      cleanups.push(() => deckMedia.revert());
     }
 
     /* Tidslinje: ringen tegnes og årstallet skifter mens du scroller */

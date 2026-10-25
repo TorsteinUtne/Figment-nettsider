@@ -8,8 +8,8 @@ Bygget på designmalen [Onda fra 8B](https://8b.com/templates/onda/) (MIT-lisens
 
 | Side | Mappe | Innhold |
 |---|---|---|
-| Forside | `index.html` | Hero, hvem vi er, tjenester, tidslinje, utvalgte prosjekter, Sonatgruppen, karriere, kontaktpersoner |
-| Våre tjenester | `tjenester/` | Fire tjenesteområder med tre nivåer hver, fagområder, kundesitat |
+| Forside | `index.html` | Hero, hvem vi er, tjenester, tidslinje, utvalgte prosjekter, Sonatgruppen, karriere, kontaktpersoner, logokarusell |
+| Våre tjenester | `tjenester/` | Fire tjenesteområder med tre nivåer hver, logokarusell med kunder |
 | Prosjekter | `prosjekter/` | Liste med filter på bransje, og én undermappe per prosjekt |
 | Å jobbe i Figment | `jobbe-i-figment/` | Verdier, ansattgoder, sosialt, alle ansatte |
 | Karriere | `karriere/` | Hvem vi ser etter og ledige stillinger |
@@ -49,7 +49,9 @@ Skriptet oppdaterer alle sider. Det krever Node.js, men sidene fungerer som de e
 
 **Kundelogoer.** Prosjektene viser kundens logo på en hvit flate. Logoene ligger i `assets/img/logoer/` og heter det samme som prosjektmappen, for eksempel `sammen.png`. Bruk PNG eller SVG med gjennomsiktig bakgrunn.
 
-**Legge til et prosjekt.** Kopier en prosjektmappe, for eksempel `prosjekter/sammen/`, gi den nytt navn og bytt tekst og bilde. Legg så til et kort i `prosjekter/index.html` (og eventuelt på forsiden). `data-tags` på kortet styrer bransjefilteret og må matche en knapp øverst i lista. Ny bransje: legg til en knapp.
+**Logokarusellen.** Den står både på forsiden og på tjenestesiden. Hver kunde er en `<li class="logo-tile">` i `index.html` og `tjenester/index.html`, så husk å endre begge. Har kunden logo, legg filen i `assets/img/logoer/` og bruk `<img>`. Uten logo står navnet som tekst. Kopien som får båndet til å gå rundt lages automatisk, så hver kunde skal bare stå én gang.
+
+**Legge til et prosjekt.** Kopier en prosjektmappe, for eksempel `prosjekter/sammen/`, gi den nytt navn og bytt tekst og bilde. Legg så til et kort i `prosjekter/index.html` (og eventuelt på forsiden). `data-tags` på kortet styrer bransjefilteret. Et prosjekt kan ha flere bransjer, skilt med komma (`data-tags="helse,offentlig-sektor"`). Hver bransje må matche en knapp øverst i lista. Ny bransje: legg til en knapp.
 
 **Legge til en ansatt.** Kopier en `<article class="member">`-blokk i `jobbe-i-figment/index.html`. Sitat legges inn der det står `SITAT` i en kommentar.
 
