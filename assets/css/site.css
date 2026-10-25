@@ -27,14 +27,14 @@
 @layer tokens {
 :root {
   /* Mørkt tema: mørk bakgrunn og hvit tekst over hele siden.
-     Kontrastfarge: plomme-burgunder i to toner. */
+     Kontrastfarge: plomme-burgunder #9b2d4f. */
   --color-paper: #18171e;        /* hovedbakgrunn, samme som hero så den glir sømløst inn */
   --color-ink: #18171e;          /* flater som hero, tjenester, prosjekter, footer og meny */
   --color-surface: #2b2934;      /* kort og bokser */
   --color-text: #ffffff;         /* tekst */
   --color-muted: #dcdce0;        /* sekundærtekst */
   --color-muted-dark: #dcdce0;   /* sekundærtekst på dype flater */
-  --color-accent: #cc5f81;       /* lys burgunder: prikker, ring, linjer og fargede ord (4,7:1 mot bakgrunnen) */
+  --color-accent: #9b2d4f;       /* plomme-burgunder: prikker, ring, linjer og fargede ord */
   --color-accent-strong: #9b2d4f;/* plomme-burgunder: knapper og flater med hvit tekst (7,3:1) */
   --color-photo: #2b2934;        /* bakgrunn mens bilder lastes */
   --color-logo-bg: #ffffff;      /* hvit flate bak kundelogoer, så logoene vises i egne farger */
