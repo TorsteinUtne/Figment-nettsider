@@ -28,8 +28,8 @@
 :root {
   /* Mørkt tema: mørk bakgrunn og hvit tekst over hele siden.
      Kontrastfarge kommer senere: bytt --color-accent (og --color-accent-strong) når den er valgt. */
-  --color-paper: #211f2a;        /* hovedbakgrunn */
-  --color-ink: #18171e;          /* dypere flater: hero, tjenester, prosjekter, footer, meny */
+  --color-paper: #18171e;        /* hovedbakgrunn, samme som hero så den glir sømløst inn */
+  --color-ink: #18171e;          /* flater som hero, tjenester, prosjekter, footer og meny */
   --color-surface: #2b2934;      /* kort og bokser */
   --color-text: #ffffff;         /* tekst */
   --color-muted: #dcdce0;        /* sekundærtekst */

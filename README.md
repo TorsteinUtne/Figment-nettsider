@@ -9,7 +9,7 @@ Bygget på designmalen [Onda fra 8B](https://8b.com/templates/onda/) (MIT-lisens
 | Side | Mappe | Innhold |
 |---|---|---|
 | Forside | `index.html` | Hero, hvem vi er, tjenester, tidslinje, utvalgte prosjekter, Sonatgruppen, karriere, kontaktpersoner |
-| Strategisk teknologiledelse | `strategisk-teknologiledelse/` | Fire tjenesteområder med tre nivåer hver, fagområder, kundesitat |
+| Våre tjenester | `tjenester/` | Fire tjenesteområder med tre nivåer hver, fagområder, kundesitat |
 | Prosjekter | `prosjekter/` | Liste med filter på tjenesteområde, og én undermappe per prosjekt |
 | Å jobbe i Figment | `jobbe-i-figment/` | Verdier, ansattgoder, sosialt, alle ansatte |
 | Karriere | `karriere/` | Hvem vi ser etter og ledige stillinger |
