@@ -284,10 +284,16 @@ main { overflow-x: clip; }
 .service { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; padding: clamp(18px, 2.4vw, 34px); overflow: hidden; border-radius: var(--radius-1); background: var(--color-surface); color: var(--color-text); box-shadow: 0 -18px 50px color-mix(in srgb, var(--color-ink) 35%, transparent); }
 .service__text { display: flex; flex-direction: column; gap: 16px; }
 .service__num { color: var(--color-accent-strong); }
-.service__line { max-width: 30rem; color: var(--color-muted); }
-.service__list { display: grid; gap: 14px; margin-top: auto; padding-top: 8px; }
-.service__list li { display: grid; gap: 2px; padding-top: 12px; border-top: 1px solid var(--line); }
-.service__list span { color: var(--color-muted); font-size: 15px; line-height: 1.45; }
+.service__list { display: flex; flex-wrap: wrap; gap: 8px; }
+.service__list li { display: inline-flex; align-items: center; min-height: 34px; padding: 0 14px; border: 1px solid var(--line); border-radius: var(--radius-2); font-size: 15px; font-weight: 550; }
+.service__refs { display: grid; gap: 10px; margin-top: auto; padding-top: 16px; }
+.service__refs ul { display: grid; }
+.service__refs a { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line); text-decoration: none; }
+.service__refs li:last-child a { border-bottom: 1px solid var(--line); }
+.service__refs strong { font-weight: 600; }
+.service__refs span { grid-column: 1; color: var(--color-muted); font-size: 15px; line-height: 1.4; }
+.service__refs svg { grid-column: 2; grid-row: 1 / span 2; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: transform .45s var(--ease); }
+@media (hover: hover) { .service__refs a:hover svg { transform: translateX(4px); } .service__refs a:hover strong { text-decoration: underline; text-underline-offset: 3px; } }
 .service__media { overflow: hidden; border-radius: var(--radius-3); aspect-ratio: 16 / 10; background: var(--color-photo); }
 .service__media img { width: 100%; height: 100%; object-fit: cover; }
 .service__shade { position: absolute; inset: 0; background: var(--color-ink); opacity: 0; pointer-events: none; }
