@@ -1,0 +1,178 @@
+<!doctype html>
+<!--
+  Figment – Prosjekter.
+  Felles deler (header, footer m.m.) står mellom partial-markører og oppdateres med: node tools/sync.mjs
+  Nytt prosjekt: legg til et <a class="project">-kort under, og lag en prosjektside i en egen mappe.
+  data-tags styrer filteret og må matche en data-filter-knapp, f.eks. helse eller offentlig-sektor.
+-->
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<title>Prosjekter – Figment</title>
+<meta name="description" content="Utvalgte prosjekter fra Figment: KS Digital, Sammen, Felleskjøpet, Helse Vest IKT, Helseplattformen og Wattif EV.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prosjekter – Figment">
+<meta property="og:description" content="Vi leder initiativer fra idéfasen til gjennomføring.">
+<meta property="og:image" content="../assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<!-- partial:head -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#18171e">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<!-- /partial:head -->
+</head>
+<body data-page="prosjekter">
+<!-- partial:header -->
+<a class="skip" href="#main">Hopp til innholdet</a>
+<header class="site-header">
+  <a class="site-header__brand" href="../"><img src="../assets/img/logo-white.png" width="1419" height="206" alt="Figment, til forsiden"></a>
+  <nav class="site-header__nav" aria-label="Hovedmeny">
+    <ul>
+      <li><a class="link-2" data-nav="tjenester" href="../tjenester/">Våre tjenester</a></li>
+      <li><a class="link-2" data-nav="prosjekter" aria-current="page" href="../prosjekter/">Prosjekter</a></li>
+      <li><a class="link-2" data-nav="jobbe" href="../jobbe-i-figment/">Å jobbe i Figment</a></li>
+      <li><a class="link-2" data-nav="kontakt" href="../kontakt/">Kontakt</a></li>
+    </ul>
+  </nav>
+  <button class="btn btn--light site-header__menu" type="button" aria-expanded="false" aria-controls="menu">Meny</button>
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Meny" data-lenis-prevent hidden>
+    <div class="menu__top">
+      <a class="site-header__brand" href="../"><img src="../assets/img/logo-white.png" width="1419" height="206" alt="Figment, til forsiden"></a>
+      <button class="icon-btn menu__close" type="button" aria-label="Lukk menyen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3 3 13"/></svg></button>
+    </div>
+    <ul class="menu__list">
+      <li><a data-nav="tjenester" href="../tjenester/">Våre <span class="nowrap">tjenester<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="prosjekter" aria-current="page" href="../prosjekter/"><span class="nowrap">Prosjekter<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="jobbe" href="../jobbe-i-figment/">Å jobbe i <span class="nowrap">Figment<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="kontakt" href="../kontakt/"><span class="nowrap">Kontakt<span class="dot" aria-hidden="true"></span></span></a></li>
+    </ul>
+    <p class="menu__foot">hei@figment.no · Oslo og Bergen</p>
+  </div>
+</header>
+<!-- /partial:header -->
+<main id="main">
+
+<!-- BLOKK: Sidetopp -->
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <p class="t-eyebrow page-hero__eyebrow">Prosjekter</p>
+    <h1 class="t-h1" id="page-title" data-motion="rise">Fra idé til <span class="nowrap">gjennomføring<span class="dot" aria-hidden="true"></span></span></h1>
+    <p class="t-lead page-hero__lead">Dette er ting vi har gjort som vi er skikkelig stolte av.</p>
+  </div>
+</section>
+
+<!-- BLOKK: Prosjektliste med filter -->
+<section class="section section--tight" aria-label="Prosjektliste">
+  <div class="wrap">
+    <div class="filters" data-filters="#prosjektliste" role="group" aria-label="Filtrer på bransje">
+      <button class="filter" type="button" data-filter="alle" aria-pressed="true">Alle</button>
+      <button class="filter" type="button" data-filter="offentlig-sektor" aria-pressed="false">Offentlig sektor</button>
+      <button class="filter" type="button" data-filter="helse" aria-pressed="false">Helse</button>
+      <button class="filter" type="button" data-filter="utdanning-og-velferd" aria-pressed="false">Utdanning og velferd</button>
+      <button class="filter" type="button" data-filter="landbruk-og-teknologi" aria-pressed="false">Landbruk og teknologi</button>
+      <button class="filter" type="button" data-filter="teknologi-og-vekst" aria-pressed="false">Teknologi og vekst</button>
+    </div>
+    <div class="project-list" id="prosjektliste">
+      <a class="project" href="ks-digital/" data-tags="offentlig-sektor">
+        <figure class="media media--logo"><img src="../assets/img/logoer/ks-digital.png" width="1005" height="237" alt="" loading="lazy"></figure>
+        <p class="t-eyebrow project__sector">Offentlig sektor</p>
+        <h2 class="t-h4">KS Digital</h2>
+        <p class="project__teaser">Felles digital tilskuddsforvaltning for kommuner, fylkeskommuner og stat.</p>
+        <span class="project__more">Les mer →</span>
+      </a>
+      <a class="project" href="sammen/" data-tags="utdanning-og-velferd">
+        <figure class="media media--logo"><img src="../assets/img/logoer/sammen.png" width="1200" height="184" alt="" loading="lazy"></figure>
+        <p class="t-eyebrow project__sector">Utdanning og velferd</p>
+        <h2 class="t-h4">Sammen</h2>
+        <p class="project__teaser">Ny felles digital portal for 50 000 studenter, levert på tid og budsjett.</p>
+        <span class="project__more">Les mer →</span>
+      </a>
+      <a class="project" href="felleskjopet/" data-tags="landbruk-og-teknologi">
+        <figure class="media media--logo"><img src="../assets/img/logoer/felleskjopet.png" width="1200" height="200" alt="" loading="lazy"></figure>
+        <p class="t-eyebrow project__sector">Landbruk og teknologi</p>
+        <h2 class="t-h4">Felleskjøpet</h2>
+        <p class="project__teaser">Over 20 millioner kroner i årlig besparelse på skyinfrastruktur.</p>
+        <span class="project__more">Les mer →</span>
+      </a>
+      <a class="project" href="helse-vest-ikt/" data-tags="helse">
+        <figure class="media media--logo"><img src="../assets/img/logoer/helse-vest-ikt.png" width="1077" height="201" alt="" loading="lazy"></figure>
+        <p class="t-eyebrow project__sector">Helse</p>
+        <h2 class="t-h4">Helse Vest IKT</h2>
+        <p class="project__teaser">Digital oppfølging av kreftpasienter i hjemmet.</p>
+        <span class="project__more">Les mer →</span>
+      </a>
+      <a class="project" href="helseplattformen/" data-tags="helse">
+        <figure class="media media--logo"><img src="../assets/img/logoer/helseplattformen.png" width="808" height="138" alt="" loading="lazy"></figure>
+        <p class="t-eyebrow project__sector">Helse</p>
+        <h2 class="t-h4">Helseplattformen</h2>
+        <p class="project__teaser">Utviklingsledelse og datamigrasjon i ett av Norges største helseprosjekter.</p>
+        <span class="project__more">Les mer →</span>
+      </a>
+      <a class="project" href="wattif-ev/" data-tags="teknologi-og-vekst">
+        <figure class="media media--logo"><span class="logo-fallback">Wattif EV</span><!-- LOGO: legg logoen i assets/img/logoer/wattif-ev.png og bytt ut teksten med <img> som på de andre --></figure>
+        <p class="t-eyebrow project__sector">Teknologi og vekst</p>
+        <h2 class="t-h4">Wattif EV</h2>
+        <p class="project__teaser">Dataplattform og arkitektur for et elbilladeselskap i seks europeiske markeder.</p>
+        <span class="project__more">Les mer →</span>
+      </a>
+    </div>
+    <p class="list-empty" data-filter-empty hidden>Ingen prosjekter i denne bransjen ennå.</p>
+  </div>
+</section>
+
+<!-- BLOKK: Oppfordring -->
+<section class="section" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2 class="t-h2" id="cta-title">Hør mer om <span class="nowrap">prosjektene<span class="dot" aria-hidden="true"></span></span></h2>
+      <p class="t-lead">Vi forteller gjerne mer om hvordan vi jobbet og hva vi lærte. Ta kontakt, så setter vi deg i kontakt med rådgiveren som ledet arbeidet.</p>
+      <div class="cta-band__row"><a class="btn btn--light" href="../kontakt/">Ta kontakt</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- partial:footer -->
+<footer class="site-footer">
+  <a class="site-footer__mark" href="../"><img src="../assets/img/logo-white.png" width="1419" height="206" alt="Figment, til forsiden" loading="lazy"></a>
+  <div class="site-footer__grid">
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Figment AS</p>
+      <p>Org.nr. 930 185 817</p>
+      <address>Oslo: Karl Johans gate 13<br>Bergen: C. Sundts gate 17</address>
+      <a class="link-2" href="mailto:hei@figment.no">hei@figment.no</a>
+    </div>
+    <nav class="site-footer__col" aria-label="Bunnmeny">
+      <p class="t-small site-footer__label">Sider</p>
+      <a class="link-2" href="../tjenester/">Våre tjenester</a>
+      <a class="link-2" href="../prosjekter/">Prosjekter</a>
+      <a class="link-2" href="../jobbe-i-figment/">Å jobbe i Figment</a>
+      <a class="link-2" href="../karriere/">Karriere</a>
+      <a class="link-2" href="../kontakt/">Kontakt</a>
+    </nav>
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Snakk med oss</p>
+      <a class="link-2" href="mailto:lise@figment.no">Lise, Oslo</a>
+      <a class="link-2" href="mailto:torstein@figment.no">Torstein, Bergen</a>
+    </div>
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Sonatgruppen</p>
+      <a class="link-2" href="https://sonat.no" target="_blank" rel="noopener">Sonat</a>
+      <a class="link-2" href="https://theseways.com" target="_blank" rel="noopener">These Ways</a>
+    </div>
+  </div>
+  <div class="site-footer__legal"><p>© <span data-year>2026</span> Figment AS, en del av Sonatgruppen</p><p>Designmal: <a href="https://8b.com/">8B</a></p></div>
+</footer>
+<!-- /partial:footer -->
+<!-- partial:scripts -->
+<script src="../assets/vendor/gsap.min.js"></script>
+<script src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/vendor/lenis.min.js"></script>
+<script src="../assets/js/site.js"></script>
+<!-- /partial:scripts -->
+</body>
+</html>
