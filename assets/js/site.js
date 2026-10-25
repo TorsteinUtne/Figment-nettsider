@@ -127,7 +127,7 @@
       const button = event.target.closest('[data-filter]');
       if (button) apply(button.dataset.filter);
     });
-    const fromUrl = new URLSearchParams(location.search).get('omrade');
+    const fromUrl = new URLSearchParams(location.search).get('bransje');
     if (fromUrl && filterBar.querySelector(`[data-filter="${fromUrl}"]`)) apply(fromUrl);
   }
 

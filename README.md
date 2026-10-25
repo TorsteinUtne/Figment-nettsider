@@ -10,7 +10,7 @@ Bygget på designmalen [Onda fra 8B](https://8b.com/templates/onda/) (MIT-lisens
 |---|---|---|
 | Forside | `index.html` | Hero, hvem vi er, tjenester, tidslinje, utvalgte prosjekter, Sonatgruppen, karriere, kontaktpersoner |
 | Våre tjenester | `tjenester/` | Fire tjenesteområder med tre nivåer hver, fagområder, kundesitat |
-| Prosjekter | `prosjekter/` | Liste med filter på tjenesteområde, og én undermappe per prosjekt |
+| Prosjekter | `prosjekter/` | Liste med filter på bransje, og én undermappe per prosjekt |
 | Å jobbe i Figment | `jobbe-i-figment/` | Verdier, ansattgoder, sosialt, alle ansatte |
 | Karriere | `karriere/` | Hvem vi ser etter og ledige stillinger |
 | Kontakt | `kontakt/` | Kontaktpersoner, kontorer i Oslo og Bergen, firmainfo |
@@ -47,7 +47,7 @@ node tools/sync.mjs
 
 Skriptet oppdaterer alle sider. Det krever Node.js, men sidene fungerer som de er også uten.
 
-**Legge til et prosjekt.** Kopier en prosjektmappe, for eksempel `prosjekter/sammen/`, gi den nytt navn og bytt tekst og bilde. Legg så til et kort i `prosjekter/index.html` (og eventuelt på forsiden). `data-tags` på kortet styrer filteret.
+**Legge til et prosjekt.** Kopier en prosjektmappe, for eksempel `prosjekter/sammen/`, gi den nytt navn og bytt tekst og bilde. Legg så til et kort i `prosjekter/index.html` (og eventuelt på forsiden). `data-tags` på kortet styrer bransjefilteret og må matche en knapp øverst i lista. Ny bransje: legg til en knapp.
 
 **Legge til en ansatt.** Kopier en `<article class="member">`-blokk i `jobbe-i-figment/index.html`. Sitat legges inn der det står `SITAT` i en kommentar.
 

@@ -3,7 +3,7 @@
   Figment – Prosjekter.
   Felles deler (header, footer m.m.) står mellom partial-markører og oppdateres med: node tools/sync.mjs
   Nytt prosjekt: legg til et <a class="project">-kort under, og lag en prosjektside i en egen mappe.
-  data-tags styrer filteret: ledelse, innsikt, transformasjon, gjennomforing (kommaseparert).
+  data-tags styrer filteret og må matche en data-filter-knapp, f.eks. helse eller offentlig-sektor.
 -->
 <html lang="nb">
 <head>
@@ -61,71 +61,66 @@
   <div class="wrap">
     <p class="t-eyebrow page-hero__eyebrow">Prosjekter</p>
     <h1 class="t-h1" id="page-title" data-motion="rise">Fra idé til <span class="nowrap">gjennomføring<span class="dot" aria-hidden="true"></span></span></h1>
-    <p class="t-lead page-hero__lead">Vi leder initiativer fra idéfasen til gjennomføring, i offentlig og privat sektor. Her er et utvalg av prosjektene våre, merket med tjenesteområdene vi bidro innenfor.</p>
+    <p class="t-lead page-hero__lead">Vi leder initiativer fra idéfasen til gjennomføring, i offentlig og privat sektor.</p>
   </div>
 </section>
 
 <!-- BLOKK: Prosjektliste med filter -->
 <section class="section section--tight" aria-label="Prosjektliste">
   <div class="wrap">
-    <div class="filters" data-filters="#prosjektliste" role="group" aria-label="Filtrer på tjenesteområde">
+    <div class="filters" data-filters="#prosjektliste" role="group" aria-label="Filtrer på bransje">
       <button class="filter" type="button" data-filter="alle" aria-pressed="true">Alle</button>
-      <button class="filter" type="button" data-filter="ledelse" aria-pressed="false">Ledelse</button>
-      <button class="filter" type="button" data-filter="innsikt" aria-pressed="false">Innsikt</button>
-      <button class="filter" type="button" data-filter="transformasjon" aria-pressed="false">Transformasjon</button>
-      <button class="filter" type="button" data-filter="gjennomforing" aria-pressed="false">Gjennomføring</button>
+      <button class="filter" type="button" data-filter="offentlig-sektor" aria-pressed="false">Offentlig sektor</button>
+      <button class="filter" type="button" data-filter="helse" aria-pressed="false">Helse</button>
+      <button class="filter" type="button" data-filter="utdanning-og-velferd" aria-pressed="false">Utdanning og velferd</button>
+      <button class="filter" type="button" data-filter="landbruk-og-teknologi" aria-pressed="false">Landbruk og teknologi</button>
+      <button class="filter" type="button" data-filter="teknologi-og-vekst" aria-pressed="false">Teknologi og vekst</button>
     </div>
     <div class="project-list" id="prosjektliste">
-      <a class="project" href="ks-digital/" data-tags="innsikt,transformasjon,gjennomforing">
+      <a class="project" href="ks-digital/" data-tags="offentlig-sektor">
         <figure class="media"><img src="../assets/img/ks-digital.jpg" width="1600" height="1000" alt="" loading="lazy"></figure>
         <p class="t-eyebrow project__sector">Offentlig sektor</p>
         <h2 class="t-h4">KS Digital</h2>
         <p class="project__teaser">Felles digital tilskuddsforvaltning for kommuner, fylkeskommuner og stat.</p>
-        <ul class="badges"><li class="badge">Innsikt</li><li class="badge">Transformasjon</li><li class="badge">Gjennomføring</li></ul>
         <span class="project__more">Les mer →</span>
       </a>
-      <a class="project" href="sammen/" data-tags="ledelse,transformasjon,gjennomforing">
+      <a class="project" href="sammen/" data-tags="utdanning-og-velferd">
         <figure class="media"><img src="../assets/img/sammen.jpg" width="1600" height="1000" alt="" loading="lazy"></figure>
         <p class="t-eyebrow project__sector">Utdanning og velferd</p>
         <h2 class="t-h4">Sammen</h2>
         <p class="project__teaser">Ny felles digital portal for 50 000 studenter, levert på tid og budsjett.</p>
-        <ul class="badges"><li class="badge">Ledelse</li><li class="badge">Transformasjon</li><li class="badge">Gjennomføring</li></ul>
         <span class="project__more">Les mer →</span>
       </a>
-      <a class="project" href="felleskjopet/" data-tags="ledelse,innsikt,transformasjon">
+      <a class="project" href="felleskjopet/" data-tags="landbruk-og-teknologi">
         <figure class="media"><img src="../assets/img/felleskjopet.jpg" width="1600" height="1000" alt="" loading="lazy"></figure>
         <p class="t-eyebrow project__sector">Landbruk og teknologi</p>
         <h2 class="t-h4">Felleskjøpet</h2>
         <p class="project__teaser">Over 20 millioner kroner i årlig besparelse på skyinfrastruktur.</p>
-        <ul class="badges"><li class="badge">Ledelse</li><li class="badge">Innsikt</li><li class="badge">Transformasjon</li></ul>
         <span class="project__more">Les mer →</span>
       </a>
-      <a class="project" href="helse-vest-ikt/" data-tags="innsikt,transformasjon,gjennomforing">
+      <a class="project" href="helse-vest-ikt/" data-tags="helse">
         <figure class="media"><img src="../assets/img/helse-vest-ikt.jpg" width="1600" height="1000" alt="" loading="lazy"></figure>
         <p class="t-eyebrow project__sector">Helse</p>
         <h2 class="t-h4">Helse Vest IKT</h2>
         <p class="project__teaser">Digital oppfølging av kreftpasienter i hjemmet.</p>
-        <ul class="badges"><li class="badge">Innsikt</li><li class="badge">Transformasjon</li><li class="badge">Gjennomføring</li></ul>
         <span class="project__more">Les mer →</span>
       </a>
-      <a class="project" href="helseplattformen/" data-tags="gjennomforing">
+      <a class="project" href="helseplattformen/" data-tags="helse">
         <figure class="media"><img src="../assets/img/helseplattformen.jpg" width="1600" height="1000" alt="" loading="lazy"></figure>
         <p class="t-eyebrow project__sector">Helse</p>
         <h2 class="t-h4">Helseplattformen</h2>
         <p class="project__teaser">Utviklingsledelse og datamigrasjon i ett av Norges største helseprosjekter.</p>
-        <ul class="badges"><li class="badge">Gjennomføring</li></ul>
         <span class="project__more">Les mer →</span>
       </a>
-      <a class="project" href="wattif-ev/" data-tags="innsikt,transformasjon,gjennomforing">
+      <a class="project" href="wattif-ev/" data-tags="teknologi-og-vekst">
         <figure class="media"><img src="../assets/img/wattif-ev.jpg" width="1600" height="1000" alt="" loading="lazy"></figure>
         <p class="t-eyebrow project__sector">Teknologi og vekst</p>
         <h2 class="t-h4">Wattif EV</h2>
         <p class="project__teaser">Dataplattform og arkitektur for et elbilladeselskap i seks europeiske markeder.</p>
-        <ul class="badges"><li class="badge">Innsikt</li><li class="badge">Transformasjon</li><li class="badge">Gjennomføring</li></ul>
         <span class="project__more">Les mer →</span>
       </a>
     </div>
-    <p class="list-empty" data-filter-empty hidden>Ingen prosjekter i dette området ennå.</p>
+    <p class="list-empty" data-filter-empty hidden>Ingen prosjekter i denne bransjen ennå.</p>
   </div>
 </section>
 
