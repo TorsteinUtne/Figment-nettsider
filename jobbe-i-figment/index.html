@@ -1,0 +1,242 @@
+<!doctype html>
+<!--
+  Figment – Å jobbe i Figment.
+  Felles deler (header, footer m.m.) står mellom partial-markører og oppdateres med: node tools/sync.mjs
+  Ny ansatt: kopier en <article class="member">-blokk under og bytt navn, rolle, bilde, fokus og tekst.
+-->
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<title>Å jobbe i Figment – Figment</title>
+<meta name="description" content="Verdier, goder og folkene i Figment. Vi tror på ansvar kombinert med frihet og faglig styrke uten prestisje.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Å jobbe i Figment">
+<meta property="og:description" content="Ansvar og frihet, fag og fellesskap.">
+<meta property="og:image" content="../assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<!-- partial:head -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#211f2a">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<!-- /partial:head -->
+</head>
+<body data-page="jobbe">
+<!-- partial:header -->
+<a class="skip" href="#main">Hopp til innholdet</a>
+<header class="site-header">
+  <a class="site-header__brand" href="../" aria-label="Figment, til forsiden"><span class="wordmark"><span class="nowrap">figment<span class="dot" aria-hidden="true"></span></span></span></a>
+  <nav class="site-header__nav" aria-label="Hovedmeny">
+    <ul>
+      <li><a class="link-2" data-nav="tjenester" href="../strategisk-teknologiledelse/">Strategisk teknologiledelse</a></li>
+      <li><a class="link-2" data-nav="prosjekter" href="../prosjekter/">Prosjekter</a></li>
+      <li><a class="link-2" data-nav="jobbe" aria-current="page" href="../jobbe-i-figment/">Å jobbe i Figment</a></li>
+      <li><a class="link-2" data-nav="kontakt" href="../kontakt/">Kontakt</a></li>
+    </ul>
+  </nav>
+  <button class="btn btn--light site-header__menu" type="button" aria-expanded="false" aria-controls="menu">Meny</button>
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Meny" data-lenis-prevent hidden>
+    <div class="menu__top">
+      <a class="wordmark" href="../" style="text-decoration:none"><span class="nowrap">figment<span class="dot" aria-hidden="true"></span></span></a>
+      <button class="icon-btn menu__close" type="button" aria-label="Lukk menyen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3 3 13"/></svg></button>
+    </div>
+    <ul class="menu__list">
+      <li><a data-nav="tjenester" href="../strategisk-teknologiledelse/">Strategisk <span class="nowrap">teknologiledelse<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="prosjekter" href="../prosjekter/"><span class="nowrap">Prosjekter<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="jobbe" aria-current="page" href="../jobbe-i-figment/">Å jobbe i <span class="nowrap">Figment<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="kontakt" href="../kontakt/"><span class="nowrap">Kontakt<span class="dot" aria-hidden="true"></span></span></a></li>
+    </ul>
+    <p class="menu__foot">hei@figment.no · Oslo og Bergen</p>
+  </div>
+</header>
+<!-- /partial:header -->
+<main id="main">
+
+<!-- BLOKK: Sidetopp -->
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <p class="t-eyebrow page-hero__eyebrow">Å jobbe i Figment</p>
+    <h1 class="t-h1" id="page-title" data-motion="rise">Ansvar og <span class="nowrap">frihet<span class="dot" aria-hidden="true"></span></span></h1>
+    <p class="t-lead page-hero__lead">Folkene våre er det aller viktigste vi har, og vi jobber hele tiden med å gjøre Figment til et enda bedre sted å jobbe.</p>
+    <div class="page-hero__actions">
+      <a class="btn" href="../karriere/">Se ledige stillinger</a>
+      <a class="link" href="#folkene"><span>Møt folkene</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOKK: To bilder -->
+<section aria-label="Bilder fra hverdagen">
+  <div class="wrap media-row media-row--2" data-motion="up">
+    <figure class="media ratio-4x3"><img src="../assets/img/jobbe-topp.jpg" width="1600" height="900" alt="Hverdag på Figment-kontoret"></figure>
+    <figure class="media ratio-4x3"><img src="../assets/img/fagdager-bergen.jpg" width="800" height="1000" alt="Fagdag i Bergen"></figure>
+  </div>
+</section>
+
+<!-- BLOKK: Verdier (tekstblokk) -->
+<section class="section" aria-labelledby="verdier-title">
+  <div class="wrap text-block">
+    <div class="text-block__head">
+      <p class="t-eyebrow">Verdiene våre</p>
+      <h2 class="t-h2" id="verdier-title" data-motion="rise">Det vi tror <span class="nowrap">på<span class="dot" aria-hidden="true"></span></span></h2>
+    </div>
+    <div class="prose t-lead">
+      <p><strong>Vi tror på ansvar kombinert med frihet. Vi tror på faglig styrke uten prestisje.</strong></p>
+      <p>Og vi tror at folk trives og presterer best når de får påvirke og styre sin egen arbeidshverdag.</p>
+      <p>Hos Figment finner du folk med variert fagbakgrunn. Det vi har felles, er solid erfaring fra digitalisering.</p>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:clamp(48px,8vh,96px)">
+    <div class="grid-cards grid-cards--4" data-motion="up">
+      <div class="line-card"><h3 class="t-h4">Faglig frihet</h3><p>Du former egne oppdrag og bygger fagområdet du brenner for.</p></div>
+      <div class="line-card"><h3 class="t-h4">Kort vei til beslutninger</h3><p>Ingen lange linjer. Gode idéer blir testet raskt.</p></div>
+      <div class="line-card"><h3 class="t-h4">Kolleger som deler</h3><p>Vi lærer av hverandre på tvers av oppdrag, fagdager og sertifiseringer.</p></div>
+      <div class="line-card"><h3 class="t-h4">Oppdrag som betyr noe</h3><p>Du jobber med virksomheter der teknologivalgene påvirker mange.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOKK: Ansattgoder -->
+<section class="section section--surface" id="goder" aria-labelledby="goder-title">
+  <div class="wrap split" style="align-items:start">
+    <div class="split__text">
+      <p class="t-eyebrow">Dette får du</p>
+      <h2 class="t-h2" id="goder-title" data-motion="rise">Fag, fest og <span class="nowrap">fellesskap<span class="dot" aria-hidden="true"></span></span></h2>
+      <p class="t-lead" style="color:var(--color-muted)">Vi investerer så mye vi kan i fag, festligheter og fellesskap. Og konkurransedyktig lønn, selvfølgelig.</p>
+    </div>
+    <div class="grid-cards" data-motion="up">
+      <div class="line-card"><h3 class="t-h4">Lønn</h3><p>God grunnlønn og provisjon.</p></div>
+      <div class="line-card"><h3 class="t-h4">Pensjon og forsikring</h3><p>Pensjonssparing og uføredekning, i tilfelle noe skulle skje.</p></div>
+      <div class="line-card"><h3 class="t-h4">Kompetanse</h3><p>Ditt eget utviklingsbudsjett på 25 000 kroner, og tid til å bruke det.</p></div>
+      <div class="line-card"><h3 class="t-h4">Utstyr</h3><p>Mac og iPhone.</p></div>
+      <div class="line-card"><h3 class="t-h4">Fleksibel hverdag</h3><p>Du styrer som regel selv når og hvor du jobber.</p></div>
+      <div class="line-card"><h3 class="t-h4">Sosialt</h3><p>Raust sosialbudsjett. Høsttur, julebord, vinterhelg, samlinger og sommerfest.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOKK: Sosialt (tre bilder med tekst) -->
+<section class="section" aria-labelledby="sosialt-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="t-h2" id="sosialt-title" data-motion="rise">Du vil ikke gå glipp av <span class="nowrap">det<span class="dot" aria-hidden="true"></span></span></h2>
+      <p class="t-lead section-head__lead">Vi er et tett lag, og vi bruker tid sammen også utenfor oppdragene.</p>
+    </div>
+    <div class="grid-cards grid-cards--3" data-motion="up">
+      <figure><div class="media ratio-4x3"><img src="../assets/img/hostturer-svalbard.jpg" width="1200" height="800" alt="Figment på høsttur" loading="lazy"></div><figcaption style="margin-top:16px"><h3 class="t-h4">Høstturer</h3><p style="color:var(--color-muted)">Turer i Norge og utlandet, med frisk luft og godt selskap.</p></figcaption></figure>
+      <figure><div class="media ratio-4x3"><img src="../assets/img/fagdager-bergen.jpg" width="800" height="1000" alt="Fagdag i Bergen" loading="lazy"></div><figcaption style="margin-top:16px"><h3 class="t-h4">Fagdager og samlinger</h3><p style="color:var(--color-muted)">Vi deler kunnskap, diskuterer og lærer av hverandre.</p></figcaption></figure>
+      <figure><div class="media ratio-4x3"><img src="../assets/img/sommerfest-julebord.jpg" width="1000" height="1000" alt="Sommerfest" loading="lazy"></div><figcaption style="margin-top:16px"><h3 class="t-h4">Vi feirer oss selv</h3><p style="color:var(--color-muted)">Vi markerer årets høydepunkter med god mat, god stemning og gode folk.</p></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- BLOKK: Folkene. Sitater legges inn der det står SITAT. -->
+<section class="section section--tight" id="folkene" aria-labelledby="folkene-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="t-h2" id="folkene-title" data-motion="rise"><span class="nowrap">Folkene<span class="dot" aria-hidden="true"></span></span></h2>
+      <p class="t-lead section-head__lead">Et tett lag av seniorrådgivere med mye erfaring og et felles mål: teknologiprosjekter som gir høy verdi.</p>
+    </div>
+    <div class="people">
+      <article class="member">
+        <figure class="media"><img src="../assets/img/lise-aasland-ursin.png" width="800" height="1000" alt="Lise Aasland Ursin" loading="lazy"></figure>
+        <div><h3 class="t-h4">Lise Aasland Ursin</h3><p class="member__role">Direktør Oslo</p></div>
+        <ul class="badges"><li class="badge">Prosjektledelse</li><li class="badge">Tjenestedesign</li><li class="badge">Endringsledelse</li></ul>
+        <p class="member__bio">Lise har 12 års erfaring med å lede mennesker, prosesser og digitale endringer. Hun gjør komplekse utfordringer forståelige og får gode idéer helt fram til varige forbedringer.</p>
+        <!-- SITAT: <blockquote class="member__quote">«…»</blockquote> -->
+      </article>
+      <article class="member">
+        <figure class="media"><img src="../assets/img/torstein.png" width="800" height="1000" alt="Torstein Utne" loading="lazy"></figure>
+        <div><h3 class="t-h4">Torstein Utne</h3><p class="member__role">Direktør Bergen</p></div>
+        <ul class="badges"><li class="badge">Virksomhetsarkitektur</li><li class="badge">IT-strategi</li><li class="badge">Prosjektledelse</li></ul>
+        <p class="member__bio">Torstein er grunnlegger og daglig leder med over 20 års erfaring. Han er TOGAF-sertifisert virksomhetsarkitekt med bred bakgrunn fra offentlig sektor, transport og finans.</p>
+        <!-- SITAT: <blockquote class="member__quote">«…»</blockquote> -->
+      </article>
+      <article class="member">
+        <figure class="media"><img src="../assets/img/alise.jpg" width="800" height="1000" alt="Alise Haukenes" loading="lazy"></figure>
+        <div><h3 class="t-h4">Alise Haukenes</h3><p class="member__role">Partner</p></div>
+        <ul class="badges"><li class="badge">Prosjektledelse</li><li class="badge">Prosessforbedring</li><li class="badge">Arkitektur</li></ul>
+        <p class="member__bio">Alise er en tverrfaglig rådgiver med master i informatikk og grad i økonomi. Hun leder prosjekter fra både teknisk og forretningsmessig ståsted, fra idé til ferdig løsning.</p>
+        <!-- SITAT: <blockquote class="member__quote">«…»</blockquote> -->
+      </article>
+      <article class="member">
+        <figure class="media"><img src="../assets/img/tomas.jpg" width="800" height="1000" alt="Tomas Finnøy" loading="lazy"></figure>
+        <div><h3 class="t-h4">Tomas Finnøy</h3><p class="member__role">Partner</p></div>
+        <ul class="badges"><li class="badge">Dataplattform</li><li class="badge">Virksomhetsarkitektur</li><li class="badge">Tech Lead</li></ul>
+        <p class="member__bio">Tomas har mer enn 20 års erfaring innen arkitektur og systemutvikling. Han er vårt sterkeste kort innen digitalisering, dataplattformer og arkitektur, særlig i havbruksnæringen.</p>
+        <!-- SITAT: <blockquote class="member__quote">«…»</blockquote> -->
+      </article>
+      <article class="member">
+        <figure class="media"><img src="../assets/img/edvard.jpg" width="800" height="1000" alt="Edvard Bjerk" loading="lazy"></figure>
+        <div><h3 class="t-h4">Edvard Bjerk</h3><p class="member__role">Partner</p></div>
+        <ul class="badges"><li class="badge">Prosjektledelse</li><li class="badge">Kravspesifikasjon</li><li class="badge">Helse-IT</li></ul>
+        <p class="member__bio">Edvard er siviløkonom fra NHH med tilleggsutdanning fra Berkeley. Han er spesialist på prosjektledelse i helsesektoren og smidig metodikk, med lang erfaring fra Helseplattformen.</p>
+        <!-- SITAT: <blockquote class="member__quote">«…»</blockquote> -->
+      </article>
+      <article class="member">
+        <figure class="media"><img src="../assets/img/bjorn.png" width="800" height="1000" alt="Bjørn Kjetil Husby" loading="lazy"></figure>
+        <div><h3 class="t-h4">Bjørn Kjetil Husby</h3><p class="member__role">Partner</p></div>
+        <ul class="badges"><li class="badge">Prosjektledelse</li><li class="badge">Implementering</li><li class="badge">Leverandørstyring</li></ul>
+        <p class="member__bio">Bjørn er en erfaren prosjektleder med over 10 års erfaring. Han er vårt sterkeste kort på teknisk infrastruktur, leverandøroppfølging og prosjekter innen kraft, energi og havbruk.</p>
+        <!-- SITAT: <blockquote class="member__quote">«…»</blockquote> -->
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BLOKK: Oppfordring -->
+<section class="section" aria-labelledby="cta-title">
+  <div class="wrap">
+    <a class="cta-band" href="../karriere/">
+      <p class="t-small hiring__tag" style="color:var(--color-muted-dark)">Vi ansetter</p>
+      <h2 class="t-h2" id="cta-title">Bli en av <span class="nowrap">oss<span class="dot" aria-hidden="true"></span></span></h2>
+      <p class="t-lead">Vi ser etter seniorkonsulenter i Oslo og Bergen.</p>
+      <div class="cta-band__row"><span class="btn btn--light">Se hvem vi ser etter</span></div>
+    </a>
+  </div>
+</section>
+
+</main>
+<!-- partial:footer -->
+<footer class="site-footer">
+  <a class="site-footer__mark" href="../" aria-label="Figment, til forsiden" style="text-decoration:none"><span class="nowrap">figment<span class="dot" aria-hidden="true"></span></span></a>
+  <div class="site-footer__grid">
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Figment AS</p>
+      <p>Org.nr. 930 185 817</p>
+      <address>Oslo: Karl Johans gate 13<br>Bergen: C. Sundts gate 17</address>
+      <a class="link-2" href="mailto:hei@figment.no">hei@figment.no</a>
+    </div>
+    <nav class="site-footer__col" aria-label="Bunnmeny">
+      <p class="t-small site-footer__label">Sider</p>
+      <a class="link-2" href="../strategisk-teknologiledelse/">Strategisk teknologiledelse</a>
+      <a class="link-2" href="../prosjekter/">Prosjekter</a>
+      <a class="link-2" href="../jobbe-i-figment/">Å jobbe i Figment</a>
+      <a class="link-2" href="../karriere/">Karriere</a>
+      <a class="link-2" href="../kontakt/">Kontakt</a>
+    </nav>
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Snakk med oss</p>
+      <a class="link-2" href="mailto:lise@figment.no">Lise, Oslo</a>
+      <a class="link-2" href="mailto:torstein@figment.no">Torstein, Bergen</a>
+    </div>
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Sonatgruppen</p>
+      <a class="link-2" href="https://sonat.no" target="_blank" rel="noopener">Sonat</a>
+      <a class="link-2" href="https://theseways.com" target="_blank" rel="noopener">These Ways</a>
+    </div>
+  </div>
+  <div class="site-footer__legal"><p>© <span data-year>2026</span> Figment AS, en del av Sonatgruppen</p><p>Designmal: <a href="https://8b.com/">8B</a></p></div>
+</footer>
+<!-- /partial:footer -->
+<!-- partial:scripts -->
+<script src="../assets/vendor/gsap.min.js"></script>
+<script src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/vendor/lenis.min.js"></script>
+<script src="../assets/js/site.js"></script>
+<!-- /partial:scripts -->
+</body>
+</html>

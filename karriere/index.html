@@ -1,0 +1,201 @@
+<!doctype html>
+<!--
+  Figment – Karriere: hvem vi ser etter og ledige stillinger.
+  Felles deler (header, footer m.m.) står mellom partial-markører og oppdateres med: node tools/sync.mjs
+  Ny stilling: kopier en <a class="role">-linje under «Ledige stillinger».
+-->
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<title>Karriere – Figment</title>
+<meta name="description" content="Figment er i vekst og ser etter seniorkonsulenter i Oslo og Bergen. Se hvem vi ser etter og send søknad.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Karriere i Figment">
+<meta property="og:description" content="Vi ser etter seniorkonsulenter i Oslo og Bergen.">
+<meta property="og:image" content="../assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<!-- partial:head -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#211f2a">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<!-- /partial:head -->
+</head>
+<body data-page="jobbe">
+<!-- partial:header -->
+<a class="skip" href="#main">Hopp til innholdet</a>
+<header class="site-header">
+  <a class="site-header__brand" href="../" aria-label="Figment, til forsiden"><span class="wordmark"><span class="nowrap">figment<span class="dot" aria-hidden="true"></span></span></span></a>
+  <nav class="site-header__nav" aria-label="Hovedmeny">
+    <ul>
+      <li><a class="link-2" data-nav="tjenester" href="../strategisk-teknologiledelse/">Strategisk teknologiledelse</a></li>
+      <li><a class="link-2" data-nav="prosjekter" href="../prosjekter/">Prosjekter</a></li>
+      <li><a class="link-2" data-nav="jobbe" aria-current="page" href="../jobbe-i-figment/">Å jobbe i Figment</a></li>
+      <li><a class="link-2" data-nav="kontakt" href="../kontakt/">Kontakt</a></li>
+    </ul>
+  </nav>
+  <button class="btn btn--light site-header__menu" type="button" aria-expanded="false" aria-controls="menu">Meny</button>
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Meny" data-lenis-prevent hidden>
+    <div class="menu__top">
+      <a class="wordmark" href="../" style="text-decoration:none"><span class="nowrap">figment<span class="dot" aria-hidden="true"></span></span></a>
+      <button class="icon-btn menu__close" type="button" aria-label="Lukk menyen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3 3 13"/></svg></button>
+    </div>
+    <ul class="menu__list">
+      <li><a data-nav="tjenester" href="../strategisk-teknologiledelse/">Strategisk <span class="nowrap">teknologiledelse<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="prosjekter" href="../prosjekter/"><span class="nowrap">Prosjekter<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="jobbe" aria-current="page" href="../jobbe-i-figment/">Å jobbe i <span class="nowrap">Figment<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="kontakt" href="../kontakt/"><span class="nowrap">Kontakt<span class="dot" aria-hidden="true"></span></span></a></li>
+    </ul>
+    <p class="menu__foot">hei@figment.no · Oslo og Bergen</p>
+  </div>
+</header>
+<!-- /partial:header -->
+<main id="main">
+
+<!-- BLOKK: Sidetopp -->
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <a class="back" href="../jobbe-i-figment/">← Å jobbe i Figment</a>
+    <p class="t-eyebrow page-hero__eyebrow">Karriere</p>
+    <h1 class="t-h1" id="page-title" data-motion="rise">Bli en av <span class="nowrap">oss<span class="dot" aria-hidden="true"></span></span></h1>
+    <p class="t-lead page-hero__lead">Vi er i vekst og ser etter erfarne rådgivere som vil ha stor påvirkning på egne oppdrag og jobbe tett med kolleger som deler kunnskap. Synes du det er gøy å lære nye ting? Da vil vi høre fra deg.</p>
+    <div class="page-hero__actions">
+      <a class="btn" href="https://www.molte.ai/apply/2f020ef1-3388-4c91-82e7-7dd717ea3928" target="_blank" rel="noopener">Send søknad</a>
+      <a class="link" href="#stillinger"><span>Ledige stillinger</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOKK: Bilde -->
+<section aria-label="Bilde">
+  <div class="wrap">
+    <figure class="media ratio-16x9" data-motion="iris"><img src="../assets/img/karriere-topp.jpg" width="1600" height="900" alt="Figment-teamet på oppdrag"></figure>
+  </div>
+</section>
+
+<!-- BLOKK: Hvem vi ser etter + stillinger, med sidekolonne -->
+<section class="section" aria-labelledby="hvem-title">
+  <div class="wrap career-grid">
+    <div style="display:grid;gap:clamp(48px,8vh,88px)">
+      <div style="display:grid;gap:20px">
+        <h2 class="t-h2" id="hvem-title" data-motion="rise">Hvem vi ser <span class="nowrap">etter<span class="dot" aria-hidden="true"></span></span></h2>
+        <div class="prose t-lead">
+          <p>Hos Figment finner du folk med variert fagbakgrunn. Det vi har felles, er solid erfaring fra digitalisering.</p>
+          <p>Som rådgiver hos oss leder du initiativer for kundene, fra tidlig idé til ferdig gjennomført. Du får stor frihet til å forme oppdragene, og kolleger som stiller opp når du trenger det.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;gap:20px">
+        <h3 class="t-h3">Dette skal du jobbe med</h3>
+        <ul class="dots-list">
+          <li>Prosjektledelse i mange fasetter</li>
+          <li>Endringsledelse og prosessledelse</li>
+          <li>Arkitekturutvikling og produktutvikling</li>
+          <li>KI-tjenester og automatisering</li>
+          <li>Gevinstrealisering og utredninger</li>
+        </ul>
+      </div>
+
+      <div style="display:grid;gap:20px">
+        <h3 class="t-h3">Vi ser etter deg som</h3>
+        <ul class="dots-list">
+          <li>har solid erfaring fra digitalisering</li>
+          <li>liker å ta ansvar og trives med frihet</li>
+          <li>er nysgjerrig og synes det er gøy å lære nye ting</li>
+          <li>vil jobbe tett med kolleger og dele det du kan</li>
+        </ul>
+      </div>
+
+      <div id="stillinger" style="display:grid;gap:20px">
+        <h2 class="t-h2" data-motion="rise">Ledige <span class="nowrap">stillinger<span class="dot" aria-hidden="true"></span></span></h2>
+        <div class="roles">
+          <a class="role" href="https://www.molte.ai/apply/2f020ef1-3388-4c91-82e7-7dd717ea3928" target="_blank" rel="noopener"><span class="t-h4">Seniorkonsulent</span><span class="t-small role__place">Oslo</span></a>
+          <a class="role" href="https://www.molte.ai/apply/2f020ef1-3388-4c91-82e7-7dd717ea3928" target="_blank" rel="noopener"><span class="t-h4">Seniorkonsulent</span><span class="t-small role__place">Bergen</span></a>
+          <a class="role" href="https://www.molte.ai/apply/2f020ef1-3388-4c91-82e7-7dd717ea3928" target="_blank" rel="noopener"><span class="t-h4">Åpen søknad</span><span class="t-small role__place">Oslo eller Bergen</span></a>
+        </div>
+      </div>
+    </div>
+
+    <aside aria-label="Mer informasjon">
+      <div class="surface" style="display:grid;gap:12px;padding:28px">
+        <h3 class="t-h4">Dette får du</h3>
+        <p style="color:var(--color-muted)">God grunnlønn og provisjon, utviklingsbudsjett på 25 000 kroner, fleksibel hverdag og et raust sosialbudsjett.</p>
+        <a class="link" href="../jobbe-i-figment/#goder"><span>Se alle godene</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      </div>
+      <div class="person-card" style="background:transparent;box-shadow:inset 0 0 0 1px var(--line)">
+        <div class="avatar"><img src="../assets/img/lise-aasland-ursin.png" width="400" height="400" alt="Lise Aasland Ursin" loading="lazy"></div>
+        <div class="person-card__text">
+          <p class="t-eyebrow">Spørsmål om jobb i Oslo</p>
+          <h3 class="t-h4">Lise Aasland Ursin</h3>
+          <a href="mailto:lise@figment.no">lise@figment.no</a>
+          <a class="muted" href="tel:+4746664240">466 64 240</a>
+        </div>
+      </div>
+      <div class="person-card" style="background:transparent;box-shadow:inset 0 0 0 1px var(--line)">
+        <div class="avatar"><img src="../assets/img/torstein.png" width="400" height="400" alt="Torstein Utne" loading="lazy"></div>
+        <div class="person-card__text">
+          <p class="t-eyebrow">Spørsmål om jobb i Bergen</p>
+          <h3 class="t-h4">Torstein Utne</h3>
+          <a href="mailto:torstein@figment.no">torstein@figment.no</a>
+          <a class="muted" href="tel:+4796626365">966 26 365</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- BLOKK: Oppfordring -->
+<section class="section section--tight" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2 class="t-h2" id="cta-title">Vi vil gjerne høre fra <span class="nowrap">deg<span class="dot" aria-hidden="true"></span></span></h2>
+      <p class="t-lead">Send oss en søknad, eller ta en uforpliktende prat først.</p>
+      <div class="cta-band__row"><a class="btn btn--light" href="https://www.molte.ai/apply/2f020ef1-3388-4c91-82e7-7dd717ea3928" target="_blank" rel="noopener">Send søknad</a><a class="link-2" href="../kontakt/" style="color:var(--color-muted-dark)">Ta en prat →</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- partial:footer -->
+<footer class="site-footer">
+  <a class="site-footer__mark" href="../" aria-label="Figment, til forsiden" style="text-decoration:none"><span class="nowrap">figment<span class="dot" aria-hidden="true"></span></span></a>
+  <div class="site-footer__grid">
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Figment AS</p>
+      <p>Org.nr. 930 185 817</p>
+      <address>Oslo: Karl Johans gate 13<br>Bergen: C. Sundts gate 17</address>
+      <a class="link-2" href="mailto:hei@figment.no">hei@figment.no</a>
+    </div>
+    <nav class="site-footer__col" aria-label="Bunnmeny">
+      <p class="t-small site-footer__label">Sider</p>
+      <a class="link-2" href="../strategisk-teknologiledelse/">Strategisk teknologiledelse</a>
+      <a class="link-2" href="../prosjekter/">Prosjekter</a>
+      <a class="link-2" href="../jobbe-i-figment/">Å jobbe i Figment</a>
+      <a class="link-2" href="../karriere/">Karriere</a>
+      <a class="link-2" href="../kontakt/">Kontakt</a>
+    </nav>
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Snakk med oss</p>
+      <a class="link-2" href="mailto:lise@figment.no">Lise, Oslo</a>
+      <a class="link-2" href="mailto:torstein@figment.no">Torstein, Bergen</a>
+    </div>
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Sonatgruppen</p>
+      <a class="link-2" href="https://sonat.no" target="_blank" rel="noopener">Sonat</a>
+      <a class="link-2" href="https://theseways.com" target="_blank" rel="noopener">These Ways</a>
+    </div>
+  </div>
+  <div class="site-footer__legal"><p>© <span data-year>2026</span> Figment AS, en del av Sonatgruppen</p><p>Designmal: <a href="https://8b.com/">8B</a></p></div>
+</footer>
+<!-- /partial:footer -->
+<!-- partial:scripts -->
+<script src="../assets/vendor/gsap.min.js"></script>
+<script src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/vendor/lenis.min.js"></script>
+<script src="../assets/js/site.js"></script>
+<!-- /partial:scripts -->
+</body>
+</html>

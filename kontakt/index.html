@@ -1,0 +1,170 @@
+<!doctype html>
+<!--
+  Figment – Kontakt.
+  Felles deler (header, footer m.m.) står mellom partial-markører og oppdateres med: node tools/sync.mjs
+-->
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<title>Kontakt – Figment</title>
+<meta name="description" content="Ta kontakt med Figment i Oslo eller Bergen. Karl Johans gate 13, Oslo og C. Sundts gate 17, Bergen. hei@figment.no">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kontakt Figment">
+<meta property="og:description" content="Kontorer i Oslo og Bergen. hei@figment.no">
+<meta property="og:image" content="../assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<!-- partial:head -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#211f2a">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<!-- /partial:head -->
+</head>
+<body data-page="kontakt">
+<!-- partial:header -->
+<a class="skip" href="#main">Hopp til innholdet</a>
+<header class="site-header">
+  <a class="site-header__brand" href="../" aria-label="Figment, til forsiden"><span class="wordmark"><span class="nowrap">figment<span class="dot" aria-hidden="true"></span></span></span></a>
+  <nav class="site-header__nav" aria-label="Hovedmeny">
+    <ul>
+      <li><a class="link-2" data-nav="tjenester" href="../strategisk-teknologiledelse/">Strategisk teknologiledelse</a></li>
+      <li><a class="link-2" data-nav="prosjekter" href="../prosjekter/">Prosjekter</a></li>
+      <li><a class="link-2" data-nav="jobbe" href="../jobbe-i-figment/">Å jobbe i Figment</a></li>
+      <li><a class="link-2" data-nav="kontakt" aria-current="page" href="../kontakt/">Kontakt</a></li>
+    </ul>
+  </nav>
+  <button class="btn btn--light site-header__menu" type="button" aria-expanded="false" aria-controls="menu">Meny</button>
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Meny" data-lenis-prevent hidden>
+    <div class="menu__top">
+      <a class="wordmark" href="../" style="text-decoration:none"><span class="nowrap">figment<span class="dot" aria-hidden="true"></span></span></a>
+      <button class="icon-btn menu__close" type="button" aria-label="Lukk menyen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3 3 13"/></svg></button>
+    </div>
+    <ul class="menu__list">
+      <li><a data-nav="tjenester" href="../strategisk-teknologiledelse/">Strategisk <span class="nowrap">teknologiledelse<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="prosjekter" href="../prosjekter/"><span class="nowrap">Prosjekter<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="jobbe" href="../jobbe-i-figment/">Å jobbe i <span class="nowrap">Figment<span class="dot" aria-hidden="true"></span></span></a></li>
+      <li><a data-nav="kontakt" aria-current="page" href="../kontakt/"><span class="nowrap">Kontakt<span class="dot" aria-hidden="true"></span></span></a></li>
+    </ul>
+    <p class="menu__foot">hei@figment.no · Oslo og Bergen</p>
+  </div>
+</header>
+<!-- /partial:header -->
+<main id="main">
+
+<!-- BLOKK: Sidetopp -->
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <p class="t-eyebrow page-hero__eyebrow">Kontakt</p>
+    <h1 class="t-h1" id="page-title" data-motion="rise">La oss ta en <span class="nowrap">prat<span class="dot" aria-hidden="true"></span></span></h1>
+    <p class="t-lead page-hero__lead">Fortell oss hva dere står i. Skriv til oss, eller ta direkte kontakt med lederen ved kontoret nærmest deg.</p>
+    <p style="margin-top:40px"><a class="big-mail" href="mailto:hei@figment.no"><span>hei@figment.no</span></a></p>
+  </div>
+</section>
+
+<!-- BLOKK: Kontaktpersoner -->
+<section class="section section--tight" aria-labelledby="personer-title">
+  <div class="wrap">
+    <h2 class="visually-hidden" id="personer-title">Kontaktpersoner</h2>
+    <div class="contact-people" data-motion="up">
+      <div class="person-card">
+        <div class="avatar"><img src="../assets/img/lise-aasland-ursin.png" width="400" height="400" alt="Lise Aasland Ursin"></div>
+        <div class="person-card__text">
+          <p class="t-eyebrow">Leder Oslo</p>
+          <h3 class="t-h4">Lise Aasland Ursin</h3>
+          <a href="mailto:lise@figment.no">lise@figment.no</a>
+          <a class="muted" href="tel:+4746664240">466 64 240</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <div class="avatar"><img src="../assets/img/torstein.png" width="400" height="400" alt="Torstein Utne"></div>
+        <div class="person-card__text">
+          <p class="t-eyebrow">Leder Bergen</p>
+          <h3 class="t-h4">Torstein Utne</h3>
+          <a href="mailto:torstein@figment.no">torstein@figment.no</a>
+          <a class="muted" href="tel:+4796626365">966 26 365</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOKK: Kontorer -->
+<section class="section" aria-labelledby="kontorer-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="t-h2" id="kontorer-title" data-motion="rise">Kontorene <span class="nowrap">våre<span class="dot" aria-hidden="true"></span></span></h2>
+    </div>
+    <div class="offices">
+      <div class="office">
+        <figure class="media ratio-4x3" data-motion="iris"><img src="../assets/img/kontor-oslo.jpg" width="1200" height="900" alt="Kontoret i Oslo" loading="lazy"></figure>
+        <h3 class="t-h3">Oslo</h3>
+        <address class="t-lead">Karl Johans gate 13<br>0154 Oslo</address>
+        <a class="link" href="https://www.openstreetmap.org/search?query=Karl%20Johans%20gate%2013%2C%20Oslo" target="_blank" rel="noopener"><span>Vis i kart</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      </div>
+      <div class="office">
+        <figure class="media ratio-4x3" data-motion="iris"><img src="../assets/img/kontor-bergen.jpg" width="1200" height="900" alt="Kontoret i Bergen" loading="lazy"></figure>
+        <h3 class="t-h3">Bergen</h3>
+        <address class="t-lead">C. Sundts gate 17 (Grieggården)<br>5004 Bergen</address>
+        <a class="link" href="https://www.openstreetmap.org/search?query=C.%20Sundts%20gate%2017%2C%20Bergen" target="_blank" rel="noopener"><span>Vis i kart</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOKK: Selskapsinformasjon -->
+<section class="section section--surface section--tight" aria-labelledby="firma-title">
+  <div class="wrap text-block">
+    <div class="text-block__head"><h2 class="t-h3" id="firma-title">Figment AS</h2></div>
+    <dl class="grid-cards">
+      <div class="line-card"><dt class="t-eyebrow">Organisasjonsnummer</dt><dd class="t-h4">930 185 817</dd></div>
+      <div class="line-card"><dt class="t-eyebrow">E-post</dt><dd class="t-h4"><a href="mailto:hei@figment.no">hei@figment.no</a></dd></div>
+      <div class="line-card"><dt class="t-eyebrow">Jobbsøkere</dt><dd><a class="link" href="../karriere/"><span>Se ledige stillinger</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a></dd></div>
+      <div class="line-card"><dt class="t-eyebrow">Selskapsfamilie</dt><dd>En del av Sonatgruppen, sammen med <a href="https://sonat.no" target="_blank" rel="noopener">Sonat</a> og <a href="https://theseways.com" target="_blank" rel="noopener">These Ways</a>.</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+<!-- partial:footer -->
+<footer class="site-footer">
+  <a class="site-footer__mark" href="../" aria-label="Figment, til forsiden" style="text-decoration:none"><span class="nowrap">figment<span class="dot" aria-hidden="true"></span></span></a>
+  <div class="site-footer__grid">
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Figment AS</p>
+      <p>Org.nr. 930 185 817</p>
+      <address>Oslo: Karl Johans gate 13<br>Bergen: C. Sundts gate 17</address>
+      <a class="link-2" href="mailto:hei@figment.no">hei@figment.no</a>
+    </div>
+    <nav class="site-footer__col" aria-label="Bunnmeny">
+      <p class="t-small site-footer__label">Sider</p>
+      <a class="link-2" href="../strategisk-teknologiledelse/">Strategisk teknologiledelse</a>
+      <a class="link-2" href="../prosjekter/">Prosjekter</a>
+      <a class="link-2" href="../jobbe-i-figment/">Å jobbe i Figment</a>
+      <a class="link-2" href="../karriere/">Karriere</a>
+      <a class="link-2" href="../kontakt/">Kontakt</a>
+    </nav>
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Snakk med oss</p>
+      <a class="link-2" href="mailto:lise@figment.no">Lise, Oslo</a>
+      <a class="link-2" href="mailto:torstein@figment.no">Torstein, Bergen</a>
+    </div>
+    <div class="site-footer__col">
+      <p class="t-small site-footer__label">Sonatgruppen</p>
+      <a class="link-2" href="https://sonat.no" target="_blank" rel="noopener">Sonat</a>
+      <a class="link-2" href="https://theseways.com" target="_blank" rel="noopener">These Ways</a>
+    </div>
+  </div>
+  <div class="site-footer__legal"><p>© <span data-year>2026</span> Figment AS, en del av Sonatgruppen</p><p>Designmal: <a href="https://8b.com/">8B</a></p></div>
+</footer>
+<!-- /partial:footer -->
+<!-- partial:scripts -->
+<script src="../assets/vendor/gsap.min.js"></script>
+<script src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/vendor/lenis.min.js"></script>
+<script src="../assets/js/site.js"></script>
+<!-- /partial:scripts -->
+</body>
+</html>
