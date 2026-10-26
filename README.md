@@ -59,6 +59,57 @@ Skriptet oppdaterer alle sider. Det krever Node.js, men sidene fungerer som de e
 
 **Legge inn video i hero.** Legg videofilen i `assets/video/hero.mp4` og fjern kommentartegnene rundt `<video>` øverst på forsiden.
 
+# Vedlikehold av figment.no
+
+Slik jobber vi med nettsidene i dette prosjektet. Gjelder alle i teamet som har tilgang.
+
+## Hvor ting ligger
+
+- **Kode og innhold:** github.com/TorsteinUtne/Figment-nettsider (grenen `main`). Alt som er pushet til `main` er gjeldende versjon.
+- **Oppbygging:** Statiske HTML-sider uten byggesteg. Les `README.md` (vanlige endringer) og `CLAUDE.md` (regler for Claude) i repoet.
+- **Forhåndsvisning:** https://claude.ai/code/artifact/1cb1f157-55e9-4579-bf4a-989ba94a2f26 (artefaktet «Figment nettside», festet i sidepanelet). Dette er den faste adressen for forhåndsvisningen.
+
+## Fast forhåndsvisning (regel for Claude)
+
+- Det finnes ett forhåndsvisnings-artefakt for nettstedet, med adressen over. Claude publiserer alltid til denne adressen (Artifact publish med `url`), og lager aldri et nytt artefakt for nettsiden.
+- Før publisering leser Claude artefaktet (Artifact read) og bygger videre på den publiserte versjonen.
+- Etter hver endring i repoet oppdaterer Claude forhåndsvisningen på samme adresse, så lenken her alltid viser siste versjon.
+- Det eldre artefaktet …/8bc139b6-2933-4345-a889-2959d4fd318c (23. oktober) er utdatert og skal ikke brukes.
+
+## Slik ber du om en endring
+
+1. Start en ny samtale i dette prosjektet.
+2. Si hvilken side og hvilken del det gjelder, og hva som skal endres. Lim inn ny tekst ordrett hvis du har den. Legg ved bilder, logoer eller skjermbilder.
+3. Claude gjør endringen, tester på mobil og PC, oppdaterer forhåndsvisningen og pusher til GitHub.
+
+Eksempler:
+- «Bytt ingressen på Karriere-siden til: …»
+- «Legg til Statkraft i logokarusellen» (vedlegg logo, helst SVG eller PNG med gjennomsiktig bakgrunn)
+- «Legg inn nytt prosjekt for X, med bransje offentlig sektor» (vedlegg tekst og logo)
+
+## Avtaler og regler
+
+- Tekst skrives på norsk bokmål, aktivt og direkte, uten selgende vendinger.
+- Claude finner ikke på kunder, resultater, sitater, tall eller kontaktinfo. Mangler noe, settes det inn en kommentar i koden, og Claude sier fra.
+- Overskrifter slutter med burgunder prikk, ikke punktum.
+- Farger: mørk bakgrunn #18171e, flater #2b2934, hvit tekst, burgunder #9b2d4f på prikker, linjer og knapper.
+- Illustrasjoner på tjenestene er blyantskisser i SVG, i sidens farger.
+- Logokarusellen står både på forsiden og på tjenestesiden. Endres en kunde, må begge oppdateres.
+- Felles header og footer endres i `partials/` og synkes med `node tools/sync.mjs`.
+
+## GitHub-tilgang
+
+For at Claude skal kunne pushe, må den som starter samtalen ha koblet sin GitHub-konto til Claude og ha skrivetilgang til repoet. Uten det kan Claude bare lese repoet, og endringene må pushes manuelt.
+
+## Åpne punkter (25. oktober 2026)
+
+- Logo for Vis mangler (står som tekst i karusellen).
+- Helse Vest i karusellen viser logoen til Helse Vest IKT. Avklar om det skal være Helse Vest RHF.
+- Logoen til Fiskeridirektoratet har grå flate og liten tekst. Bytt ved bedre versjon.
+- Sitater fra ansatte mangler på «Å jobbe i Figment».
+- «Ting vi har levert» på tjenestekortene på forsiden er et utkast som bør kvalitetssikres.
+- Delingsbildet `og.jpg` (vises når siden deles i sosiale medier) er en plassholder.
+
 ## Se siden lokalt
 
 Lenkene peker på mapper (`prosjekter/`), så siden må vises gjennom en enkel webserver:
